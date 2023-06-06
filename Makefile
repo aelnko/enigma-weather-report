@@ -1,0 +1,2 @@
+start:
+	npm install && gulp
