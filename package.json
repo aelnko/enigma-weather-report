@@ -14,7 +14,9 @@
     "eslint": "^8.42.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "htmlhint": "^1.1.4",
+    "stylelint-config-standard": "^33.0.0"
   },
   "dependencies": {
     "gulp-autoprefixer": "^8.0.0",
@@ -23,6 +25,7 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-sass": "^5.1.0",
     "gulp-terser": "^2.1.0",
-    "sass": "^1.62.1"
+    "sass": "^1.62.1",
+    "stylelint-config-standard-scss": "^9.0.0"
   }
 }
