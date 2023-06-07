@@ -7,14 +7,14 @@ import terser from "gulp-terser";
 import browserSync from 'browser-sync';
 import htmlmin from 'gulp-htmlmin';
 
-const { src, dest, series, watch, task } = pkg;
+const { src, dest, series, watch } = pkg;
 const scss = sass(nodeSass);
 const browser = browserSync.create();
 
 //верстка
-const html = () => src('./frontend/src/components/**/*.html')
+const html = () => src('./frontend/src/*.html')
   .pipe(htmlmin({ collapseWhitespace: true }))
-  .pipe(dest('./frontend/dist/components/'))
+  .pipe(dest('./frontend/dist/'))
   .pipe(browser.stream());
 
 //стили
@@ -35,7 +35,7 @@ const scripts = () => src('./frontend/src/scripts/**/*.js')
 const server = () => {
   browser.init({
     server: {
-      baseDir: './frontend/dist/components'
+      baseDir: './frontend/dist/'
     },
   });
 };
@@ -49,4 +49,6 @@ const taskWatch = () => watch([
   series(styles, scripts, html)
 );
 
-export default series(styles, scripts, html, server, taskWatch);
+server();
+
+export default series(styles, scripts, html, taskWatch);
