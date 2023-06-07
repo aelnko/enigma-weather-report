@@ -44,9 +44,9 @@ const server = () => {
 const taskWatch = () => watch([
   './frontend/src/styles/**/*.scss',
   './frontend/src/scripts/**/*.js',
-  './frontend/src/components/**/*.html',
+  './frontend/src/*.html',
 ],
-  series(styles, scripts, html)
+  series(html, styles, scripts)
 );
 
 server();
