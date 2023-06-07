@@ -35,7 +35,7 @@ const scripts = () => src('./frontend/src/scripts/**/*.js')
 const server = () => {
   browser.init({
     server: {
-      baseDir: './frontend/dist'
+      baseDir: './frontend/dist/components'
     },
   });
 };
