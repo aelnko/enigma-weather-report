@@ -30,7 +30,7 @@ const scripts = () => gulp.src('./frontend/src/scripts/**/*.js')
   .pipe(gulp.dest('./frontend/dist/scripts/'))
   .pipe(browser.stream());
 
-//открыть браузер
+//сервер
 const server = () => {
   browser.init({
     server: {
