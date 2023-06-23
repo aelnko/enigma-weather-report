@@ -6,7 +6,7 @@ import gulpCleanCss from "gulp-clean-css";
 import terser from "gulp-terser";
 import browserSync from 'browser-sync';
 import htmlmin from 'gulp-htmlmin';
-import {deleteAsync} from 'del';
+import { deleteAsync } from 'del';
 
 const scss = sass(nodeSass);
 const browser = browserSync.create();
@@ -41,17 +41,18 @@ const server = () => {
 };
 
 // вотчер
-const taskWatch = () => gulp.watch([
-  './frontend/src/styles/**/*.scss',
-  './frontend/src/scripts/**/*.js',
-  './frontend/src/*.html',
-],
-  gulp.series(html, styles, scripts)
-);
+const taskWatch = () => {
+  server(); // Запуск сервера BrowserSync
+  gulp.watch([
+    './frontend/src/styles/**/*.scss',
+    './frontend/src/scripts/**/*.js',
+    './frontend/src/*.html',
+  ],
+    gulp.series(html, styles, scripts)
+  );
+};
 
 // очистка
 const clean = () => deleteAsync('./frontend/dist');
-
-server();
 
 export default gulp.series(clean, styles, scripts, html, taskWatch);
