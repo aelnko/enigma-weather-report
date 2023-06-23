@@ -6,17 +6,18 @@ import gulpCleanCss from "gulp-clean-css";
 import terser from "gulp-terser";
 import browserSync from 'browser-sync';
 import htmlmin from 'gulp-htmlmin';
+import {deleteAsync} from 'del';
 
 const scss = sass(nodeSass);
 const browser = browserSync.create();
 
-//верстка
+// верстка
 const html = () => gulp.src('./frontend/src/*.html')
   .pipe(htmlmin({ collapseWhitespace: true }))
   .pipe(gulp.dest('./frontend/dist/'))
   .pipe(browser.stream());
 
-//стили
+// стили
 const styles = () => gulp.src('./frontend/src/styles/**/*.scss')
   .pipe(scss())
   .pipe(autoPrefixer())
@@ -24,13 +25,13 @@ const styles = () => gulp.src('./frontend/src/styles/**/*.scss')
   .pipe(gulp.dest('./frontend/dist/styles/'))
   .pipe(browser.stream());
 
-//скрипты
+// скрипты
 const scripts = () => gulp.src('./frontend/src/scripts/**/*.js')
   .pipe(terser())
   .pipe(gulp.dest('./frontend/dist/scripts/'))
   .pipe(browser.stream());
 
-//сервер
+// сервер
 const server = () => {
   browser.init({
     server: {
@@ -39,7 +40,7 @@ const server = () => {
   });
 };
 
-//вотчер
+// вотчер
 const taskWatch = () => gulp.watch([
   './frontend/src/styles/**/*.scss',
   './frontend/src/scripts/**/*.js',
@@ -48,6 +49,9 @@ const taskWatch = () => gulp.watch([
   gulp.series(html, styles, scripts)
 );
 
+// очистка
+const clean = () => deleteAsync('./frontend/dist');
+
 server();
 
-export default gulp.series(styles, scripts, html, taskWatch);
+export default gulp.series(clean, styles, scripts, html, taskWatch);
