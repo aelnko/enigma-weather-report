@@ -4,6 +4,7 @@ import nodeSass from 'sass';
 import autoPrefixer from "gulp-autoprefixer";
 import gulpCleanCss from "gulp-clean-css";
 import terser from "gulp-terser";
+import imagemin from 'gulp-imagemin';
 import browserSync from 'browser-sync';
 import htmlmin from 'gulp-htmlmin';
 import { deleteAsync } from 'del';
@@ -31,6 +32,12 @@ const scripts = () => gulp.src('./frontend/src/scripts/**/*.js')
   .pipe(gulp.dest('./frontend/dist/scripts/'))
   .pipe(browser.stream());
 
+// картинки
+const images = () => gulp.src('./frontend/src/image/*.png')
+  .pipe(imagemin())
+  .pipe(gulp.dest('./frontend/dist/image'))
+  .pipe(browser.stream());
+
 // сервер
 const server = () => {
   browser.init({
@@ -55,4 +62,4 @@ const taskWatch = () => {
 // очистка
 const clean = () => deleteAsync('./frontend/dist');
 
-export default gulp.series(clean, styles, scripts, html, taskWatch);
+export default gulp.series(clean, styles, scripts, html, images, taskWatch);
