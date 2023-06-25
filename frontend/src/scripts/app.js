@@ -25,18 +25,24 @@ async function search() {
         document.querySelector('span.wind-speed.value').innerText = `${windSpeed} m/s`;
 
         const weatherIcon = document.querySelector('.weather-icon img');
+        const container = document.querySelector('.container');
 
         if (id >= 200 && id <= 232) {
           weatherIcon.src = '../image/storm.png';
+          container.setAttribute('style', 'background: linear-gradient(180deg, rgba(124,147,214,1) 27%, rgba(86,103,128,1) 85%);');
         }
         else if (id === 800) {
           weatherIcon.src = '../image/sunny.png';
+          container.setAttribute('style', 'background: linear-gradient(180deg, rgba(255,254,159,1) 0%, rgba(255,225,101,1) 49%, rgba(255,183,0,1) 100%)');
         } else if (id === 801) {
           weatherIcon.src = '../image/cloudy.png';
+          container.setAttribute('style', 'background: linear-gradient(180deg, rgba(184,255,252,1) 5%, rgba(248,255,203,1) 89%)');
         } else if (id >= 600 && id <= 622) {
           weatherIcon.src = '../image/snow.png';
+          container.setAttribute('style', 'background: linear-gradient(180deg, rgba(187,231,255,1) 27%, rgba(255,255,255,1) 85%);');
         } else if (id >= 500 && id <= 531) {
           weatherIcon.src = '../image/rain.png';
+          container.setAttribute('style', 'background: linear-gradient(180deg, rgba(124,129,214,1) 27%, rgba(56,72,143,1) 85%);');
         }
       }
     ) 
