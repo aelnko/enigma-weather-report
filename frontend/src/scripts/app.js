@@ -18,7 +18,7 @@ async function search() {
         const windSpeed = result.wind.speed;
         const feelsLike = result.main.feels_like;
 
-        document.querySelector('.current-temp div').innerText = Math.round(temp);
+        document.querySelector('.current-temp div').innerText = `${Math.round(temp)}°C`;
         document.querySelector('.city').innerText = `${city}, ${country}`;
         document.querySelector('.description').innerText = description;
         document.querySelector('span.humidity.value').innerText = `${humidity}%`;
