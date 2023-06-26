@@ -6,19 +6,74 @@ const switchWeatherIcon = (id) => {
   
   if (id >= 200 && id <= 232) {
     weatherIcon.src = '../image/storm.png';
-    container.setAttribute('style', 'background: linear-gradient(180deg, rgba(124,147,214,1) 27%, rgba(86,103,128,1) 85%);');
+    if (container.classList.length > 1) {
+      container.classList.forEach((item) => {
+        if (item !== 'storm' && item !== 'container') {
+          container.classList.remove(item);
+        }
+      });
+    }
+    container.classList.add('storm');
   } else if (id === 800) {
     weatherIcon.src = '../image/sunny.png';
-    container.setAttribute('style', 'background: linear-gradient(180deg, rgba(255,254,159,1) 0%, rgba(255,225,101,1) 49%, rgba(255,183,0,1) 100%)');
+    if (container.classList.length > 1) {
+      container.classList.forEach((item) => {
+        if (item !== 'sunny' && item !== 'container') {
+          container.classList.remove(item);
+        }
+      });
+    }
+    container.classList.add('sunny');
   } else if (id === 801) {
     weatherIcon.src = '../image/cloudy.png';
-    container.setAttribute('style', 'background: linear-gradient(180deg, rgba(184,255,252,1) 5%, rgba(248,255,203,1) 89%)');
+    if (container.classList.length > 1) {
+      container.classList.forEach((item) => {
+        if (item !== 'cloudy' && item !== 'container') {
+          container.classList.remove(item);
+        }
+      });
+    }
+    container.classList.add('cloudy');
+  } else if (id === 802) {
+    // условие для иконки с облачной погодой без солнца
+    if (container.classList.length > 1) {
+      container.classList.forEach((item) => {
+        if (item !== 'cloudy' && item !== 'container') {
+          container.classList.remove(item);
+        }
+      });
+    }
+    container.classList.add('cloudy');
+  } else if (id === 803 || id === 804) {
+    // условие для иконки с пасмурной погодой
+    if (container.classList.length > 1) {
+      container.classList.forEach((item) => {
+        if (item !== 'broken-clouds' && item !== 'container') {
+          container.classList.remove(item);
+        }
+      });
+    }
+    container.classList.add('broken-clouds');
   } else if (id >= 600 && id <= 622) {
     weatherIcon.src = '../image/snow.png';
-    container.setAttribute('style', 'background: linear-gradient(180deg, rgba(187,231,255,1) 27%, rgba(255,255,255,1) 85%);');
+    if (container.classList.length > 1) {
+      container.classList.forEach((item) => {
+        if (item !== 'snow' && item !== 'container') {
+          container.classList.remove(item);
+        }
+      });
+    }
+    container.classList.add('snow');
   } else if (id >= 500 && id <= 531) {
     weatherIcon.src = '../image/rain.png';
-    container.setAttribute('style', 'background: linear-gradient(180deg, rgba(124,129,214,1) 27%, rgba(56,72,143,1) 85%);');
+    if (container.classList.length > 1) {
+      container.classList.forEach((item) => {
+        if (item !== 'rain' && item !== 'container') {
+          container.classList.remove(item);
+        }
+      });
+    }
+    container.classList.add('rain');
   }
 };
 
