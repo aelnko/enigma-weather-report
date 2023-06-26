@@ -103,6 +103,15 @@ body {
   }
 }
 
+@keyframes draw {
+  from{
+    background-position:-35px 0;
+  }
+  to{
+    background-position:105% 0;
+  }
+}
+
 .search-box {
   position: relative;
   display: flex;
