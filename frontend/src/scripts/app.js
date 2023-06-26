@@ -22,7 +22,7 @@ const switchWeatherIcon = (id) => {
   }
 };
 
-async function search() {
+const search = async () => {
   const cityName = document.querySelector('.search-input').value;
   const apiKey = 'c8fb17bee74c48f0a0a8d6d542831ded';
   const apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`;
