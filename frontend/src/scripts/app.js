@@ -1,4 +1,4 @@
-const searchButton = document.querySelector('.image-button');
+import getWeatherData from "./api.js";
 
 const switchWeatherIcon = (id) => {
   const weatherIcon = document.querySelector('.weather-icon img');
@@ -22,33 +22,29 @@ const switchWeatherIcon = (id) => {
   }
 };
 
-const search = async () => {
+const renderWeatherInfo = async () => {
   const cityName = document.querySelector('.search-input').value;
-  const apiKey = 'c8fb17bee74c48f0a0a8d6d542831ded';
-  const apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`;
+  const weatherData = await getWeatherData(cityName);
+  
+  const city = weatherData.name;
+  const country = weatherData.sys.country;
+  const {description, id} = weatherData.weather[0];
+  const {temp, humidity} = weatherData.main;
+  const windSpeed = weatherData.wind.speed;
+  const feelsLike = weatherData.main.feels_lik;
 
-  await fetch(apiCall)
-    .then(response => response.json())
-    .then(
-      result => {
-        console.log(result);
+  document.querySelector('.current-temp div').innerText = `${Math.round(temp)}°C`;
+  document.querySelector('.city').innerText = `${city}, ${country}`;
+  document.querySelector('.description').innerText = description;
+  document.querySelector('span.humidity.value').innerText = `${humidity}%`;
+  document.querySelector('span.wind-speed.value').innerText = `${windSpeed} m/s`;
 
-        const city = result.name;
-        const country = result.sys.country;
-        const {description, id} = result.weather[0];
-        const {temp, humidity} = result.main;
-        const windSpeed = result.wind.speed;
-        const feelsLike = result.main.feels_like;
+  switchWeatherIcon(id);
+};
 
-        document.querySelector('.current-temp div').innerText = `${Math.round(temp)}°C`;
-        document.querySelector('.city').innerText = `${city}, ${country}`;
-        document.querySelector('.description').innerText = description;
-        document.querySelector('span.humidity.value').innerText = `${humidity}%`;
-        document.querySelector('span.wind-speed.value').innerText = `${windSpeed} m/s`;
+const app = () => {
+  const searchButton = document.querySelector('.image-button');
+  searchButton.addEventListener('click', renderWeatherInfo);
+};
 
-        switchWeatherIcon(id)
-      }
-    ) 
-}
-
-searchButton.addEventListener('click', search);
+app();
