@@ -94,6 +94,14 @@ body {
   background: linear-gradient(to right bottom, #5c93e8, #193e69);
 }
 
+.container.error {
+  background: linear-gradient(to left top, #ffb4b4, #e35050);
+}
+
+.container.error::after {
+  background: linear-gradient(to right bottom, #ffb4b4, #e35050);
+}
+
 @keyframes my-animation {
   from {
       opacity: 0;
