@@ -35,7 +35,7 @@ const switchWeatherIcon = (id) => {
   } else if (id === 801 || id === 802) {
     weatherIcon.src = '../image/cloudy.png';
   } else if (id === 803 || id === 804) {
-    container.classList.add('broken-clouds');
+    //container.classList.add('broken-clouds');
   } else if (id >= 600 && id <= 622) {
     weatherIcon.src = '../image/snow.png';
   } else if (id >= 500 && id <= 531) {
