@@ -65,8 +65,8 @@ const renderError = () => {
   const weatherDetailsDiv = document.querySelector('.weather-details');
   weatherDetailsDiv.remove();
 
-  document.querySelector('.current-temp div').innerHTML = '';
-  document.querySelector('.city').innerHTML = '';
+  document.querySelector('.current-temp div').innerText = '';
+  document.querySelector('.city').innerText = '';
 
   const description = document.querySelector('.description');
   description.innerText = 'Oh, no...';
