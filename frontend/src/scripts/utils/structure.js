@@ -83,7 +83,7 @@ const createErrorStructure = () => {
   const descriptionDiv = document.createElement('div');
   descriptionDiv.classList.add('description');
   descriptionDiv.innerText = 'Oh, no...';
-  descriptionDiv.style.marginTop = '96px'
+  descriptionDiv.style.marginTop = '64px'
 
   const errorDetailsDiv = document.createElement('div');
   errorDetailsDiv.classList.add('error-details', 'error-message');

@@ -1,63 +1,6 @@
 import { switchWeatherIcon, switchColor } from "./switch_view.js";
 import getWeatherData from "../api.js";
-import { createWeatherStructure, createErrorStructure } from "./asd.js";
-
-const createErrorDetailsDiv = () => {
-  const div = document.createElement('div');
-  div.classList.add('error-details', 'error-message');
-  div.textContent = 'It seems there is no such city, try to enter the name again';
-  div.style.marginTop = '96px';
-  return div;
-};
-
-const createWeatherDetailsDiv = () => {
-  const weatherDiv = document.createElement('div');
-  weatherDiv.classList.add('weather-details');
-
-  const createItemDiv = (str, imageName) => {
-    const itemDiv = document.createElement('div');
-    const span = document.createElement('span');
-    const p = document.createElement('p');
-    const iconDiv = document.createElement('div');
-    const iconImg = document.createElement('img');
-    const text = str.toLowerCase().replace(' ', '-');
-
-    itemDiv.classList.add('item');
-    
-    span.classList.add('value', text);
-    p.textContent = str;
-    iconDiv.classList.add(text, 'icon');
-
-    iconImg.src = `./image/${imageName}.png.png`;
-
-    itemDiv.append(iconDiv, span, p);
-    iconDiv.append(iconImg);
-
-    return itemDiv;
-  };
-
-  const humidityDiv = createItemDiv('humidity', 'drop');
-  const windSpeedDiv = createItemDiv('wind speed', 'wind');
-
-  weatherDiv.append(humidityDiv, windSpeedDiv);
-
-  return weatherDiv;
-};
-
-const setToDefault = () => {
-  const errorDetailsDiv = document.querySelector('.error-details');
-  if (errorDetailsDiv) errorDetailsDiv.remove();
-
-  const errorBoxDiv = document.querySelector('.error-box');
-  if (errorBoxDiv) {
-    errorBoxDiv.classList.replace('error-box', 'weather-box');
-    const weatherDetailsDiv = createWeatherDetailsDiv();
-    errorBoxDiv.append(weatherDetailsDiv);
-  }
-  
-  const description = document.querySelector('.description');
-  description.style.marginTop = '';
-};
+import { createWeatherStructure, createErrorStructure } from "./structure.js";
 
 const renderError = () => {
   const wrapper = document.querySelector('.container__wrapper');
