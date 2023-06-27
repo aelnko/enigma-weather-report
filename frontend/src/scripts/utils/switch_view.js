@@ -1,4 +1,5 @@
 const clearContainerClasses = (container) => {
+  console.log(container.classList)
   container.classList.forEach((item) => {
     if (item !== 'container') {
       container.classList.remove(item);
@@ -10,7 +11,9 @@ const switchColor = (id) => {
   const container = document.querySelector('.container');
   clearContainerClasses(container);
 
-  if (id >= 200 && id <= 232) {
+  if (id === null) {
+    container.classList.add('error');
+  } else if (id >= 200 && id <= 232) {
     container.classList.add('storm');
   } else if (id === 800) {
     container.classList.add('sunny');
@@ -28,18 +31,20 @@ const switchColor = (id) => {
 const switchWeatherIcon = (id) => {
   const weatherIcon = document.querySelector('.weather-icon img');
 
-  if (id >= 200 && id <= 232) {
-    weatherIcon.src = '../image/storm.png';
+  if (id === null) {
+    weatherIcon.src = '../../image/warning.png';
+  } else if (id >= 200 && id <= 232) {
+    weatherIcon.src = '../../image/storm.png';
   } else if (id === 800) {
-    weatherIcon.src = '../image/sunny.png';
+    weatherIcon.src = '../../image/sunny.png';
   } else if (id === 801 || id === 802) {
-    weatherIcon.src = '../image/cloudy.png';
+    weatherIcon.src = '../../image/cloudy.png';
   } else if (id === 803 || id === 804) {
-    //container.classList.add('broken-clouds');
+    weatherIcon.src = '../../image/overcast.png';
   } else if (id >= 600 && id <= 622) {
-    weatherIcon.src = '../image/snow.png';
+    weatherIcon.src = '../../image/snow.png';
   } else if (id >= 500 && id <= 531) {
-    weatherIcon.src = '../image/rain.png';
+    weatherIcon.src = '../../image/rain.png';
   }
 };
 

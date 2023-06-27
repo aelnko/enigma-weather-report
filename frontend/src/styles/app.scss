@@ -94,6 +94,14 @@ body {
   background: linear-gradient(to right bottom, #5c93e8, #193e69);
 }
 
+.container.error {
+  background: linear-gradient(to left top, #ffb4b4, #e35050);
+}
+
+.container.error::after {
+  background: linear-gradient(to right bottom, #ffb4b4, #e35050);
+}
+
 @keyframes my-animation {
   from {
       opacity: 0;
@@ -224,7 +232,7 @@ font-weight: 500;
 }
 
 .error-box {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -233,10 +241,19 @@ font-weight: 500;
   transition: all .2s ease-out;
 }
 
+.error-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 24px 24px;
+}
+
 .error-message {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   font-family: 'Montserrat', sans-serif;
-  text-transform: capitalize;
-  letter-spacing: 2px;
 }
