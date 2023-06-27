@@ -9,20 +9,51 @@ const createErrorDetailsDiv = () => {
   return div;
 };
 
+const createWeatherDetailsDiv = () => {
+  const weatherDiv = document.createElement('div');
+  weatherDiv.classList.add('weather-details');
+
+  const createItemDiv = (str, imageName) => {
+    const itemDiv = document.createElement('div');
+    const span = document.createElement('span');
+    const p = document.createElement('p');
+    const iconDiv = document.createElement('div');
+    const iconImg = document.createElement('img');
+    const text = str.toLowerCase().replace(' ', '-');
+
+    itemDiv.classList.add('item');
+    
+    span.classList.add('value', text);
+    p.textContent = str;
+    iconDiv.classList.add(text, 'icon');
+
+    iconImg.src = `./image/${imageName}.png.png`;
+
+    itemDiv.append(iconDiv, span, p);
+    iconDiv.append(iconImg);
+
+    return itemDiv;
+  };
+
+  const humidityDiv = createItemDiv('humidity', 'drop');
+  const windSpeedDiv = createItemDiv('wind speed', 'wind');
+
+  weatherDiv.append(humidityDiv, windSpeedDiv);
+
+  return weatherDiv;
+};
+
 const setToDefault = () => {
   const errorDetailsDiv = document.querySelector('.error-details');
-  if (errorDetailsDiv) {
-    errorDetailsDiv.remove();
-  }
+  if (errorDetailsDiv) errorDetailsDiv.remove();
 
   const errorBoxDiv = document.querySelector('.error-box');
   if (errorBoxDiv) {
     errorBoxDiv.classList.replace('error-box', 'weather-box');
+    const weatherDetailsDiv = createWeatherDetailsDiv();
+    errorBoxDiv.append(weatherDetailsDiv);
   }
-
-  const weatherDetailsDiv = document.querySelector('.weather-details');
-  weatherDetailsDiv.style.display = 'flex';
-
+  
   const description = document.querySelector('.description');
   description.style.marginTop = '';
 };
@@ -32,7 +63,7 @@ const renderError = () => {
   weatherBoxDiv.classList.replace('weather-box', 'error-box');
 
   const weatherDetailsDiv = document.querySelector('.weather-details');
-  weatherDetailsDiv.style.display = 'none';
+  weatherDetailsDiv.remove();
 
   document.querySelector('.current-temp div').innerHTML = '';
   document.querySelector('.city').innerHTML = '';
