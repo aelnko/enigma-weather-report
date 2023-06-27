@@ -1,5 +1,6 @@
 import { switchWeatherIcon, switchColor } from "./switch_view.js";
 import getWeatherData from "../api.js";
+import { createWeatherStructure, createErrorStructure } from "./asd.js";
 
 const createErrorDetailsDiv = () => {
   const div = document.createElement('div');
@@ -59,44 +60,46 @@ const setToDefault = () => {
 };
 
 const renderError = () => {
-  const weatherBoxDiv = document.querySelector('.weather-box');
-  weatherBoxDiv.classList.replace('weather-box', 'error-box');
+  const wrapper = document.querySelector('.container__wrapper');
+  
+  const weatherBox = document.querySelector('.weather-box');
+  if (weatherBox) weatherBox.remove();
 
-  const weatherDetailsDiv = document.querySelector('.weather-details');
-  weatherDetailsDiv.remove();
+  const errorBox = document.querySelector('.error-box');
+  if (errorBox) errorBox.remove();
+  
+  const errorBoxDiv = createErrorStructure();
 
-  document.querySelector('.current-temp div').innerText = '';
-  document.querySelector('.city').innerText = '';
-
-  const description = document.querySelector('.description');
-  description.innerText = 'Oh, no...';
-  description.style.marginTop = '64px';
-
-  const errorDiv = createErrorDetailsDiv();
-  weatherBoxDiv.append(errorDiv);
+  wrapper.append(errorBoxDiv);
 
   switchWeatherIcon(null);
   switchColor(null);
 };
 
-const renderWeatherInfo = async () => {
-  setToDefault();
-  
+const renderWeatherInfo = async () => {  
   const cityName = document.querySelector('.search-input').value;
+  const wrapper = document.querySelector('.container__wrapper');
+
   const weatherData = await getWeatherData(cityName);
-  console.log(weatherData.cod);
   
   if (weatherData.message === 'city not found') {
     renderError();
     return;
   }
   
+  const errorBox = document.querySelector('.error-box');
+  if (errorBox) errorBox.remove();
+
+  const weatherBox = document.querySelector('.weather-box');
+  if (weatherBox) weatherBox.remove();
+  
   const city = weatherData.name;
   const country = weatherData.sys.country;
   const {description, id} = weatherData.weather[0];
   const {temp, humidity} = weatherData.main;
   const windSpeed = weatherData.wind.speed;
-  const feelsLike = weatherData.main.feels_lik;
+
+  wrapper.append(createWeatherStructure());
 
   document.querySelector('.current-temp div').innerText = `${Math.round(temp)}°C`;
   document.querySelector('.city').innerText = `${city}, ${country}`;
