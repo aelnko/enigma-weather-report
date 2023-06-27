@@ -1,5 +1,5 @@
 import getWeatherData from "./api.js";
-import switchWeatherIcon from "./utils/switchWeatherIcon.js";
+import { switchColor, switchWeatherIcon } from "./utils/switch_view.js";
 
 const renderWeatherInfo = async () => {
   const cityName = document.querySelector('.search-input').value;
@@ -19,6 +19,7 @@ const renderWeatherInfo = async () => {
   document.querySelector('span.wind-speed.value').innerText = `${windSpeed} m/s`;
 
   switchWeatherIcon(id);
+  switchColor(id);
 };
 
 const app = () => {
