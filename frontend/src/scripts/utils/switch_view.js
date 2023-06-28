@@ -3,11 +3,13 @@ const clearContainerClasses = (container) => {
   container.classList.forEach((item) => {
     if (item !== 'container') {
       container.classList.remove(item);
+      return item;
     }
   });
 };
 
 const switchGradient = (newClass) => {
+  const container = document.querySelector('.container');
   const gradients = {
     cloudy: 'linear-gradient(to left top, #caf6e5, #f4fcc1)',
     storm: 'linear-gradient(to left top, #97a8c4, #513a87)',
@@ -27,40 +29,35 @@ const switchGradient = (newClass) => {
   let timer = setInterval(() => {
     const timePassed = Date.now() - start;
     let opacity = parseFloat(gradientLayer.style.opacity);
-    opacity += 0.001;
+    opacity += 0.01;
     gradientLayer.style.opacity = opacity.toString();
-    if (timePassed > 1000) clearInterval(timer);
+    if (opacity >= 1.0) {
+      container.style.background = gradients[newClass];
+      gradientLayer.style.opacity = 0;
+      clearInterval(timer);
+    };
   }, 1);
 };
 
 const switchColor = (id) => {
   const container = document.querySelector('.container');
-  clearContainerClasses(container);
 
   if (id === null) {
     switchGradient('error');
-    container.classList.add('error');
   } else if (id >= 200 && id <= 232) {
     switchGradient('storm');
-    container.classList.add('storm');
   } else if (id === 800) {
     switchGradient('sunny');
-    container.classList.add('sunny');
   } else if (id === 801 || id === 802) {
     switchGradient('cloudy');
-    container.classList.add('cloudy');
   } else if (id === 803 || id === 804) {
     switchGradient('broken-clouds');
-    container.classList.add('broken-clouds');
   } else if (id >= 600 && id <= 622) {
     switchGradient('snow');
-    container.classList.add('snow');
   } else if (id >= 500 && id <= 531) {
     switchGradient('rain');
-    container.classList.add('rain');
   } else if (id >= 701 && id <= 781) {
     switchGradient('fog');
-    container.classList.add('fog');
   }
 };
 
