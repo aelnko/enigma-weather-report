@@ -12,7 +12,7 @@ const switchTheme = () => {
     const nextIndex = (currentIndex + 1) % themes.length;
     return themes[nextIndex];
   };
-
+  
   const reverse = (theme) => {
     const headerDiv = document.querySelector('.header');
     const switchButtons = headerDiv.querySelectorAll('button');
