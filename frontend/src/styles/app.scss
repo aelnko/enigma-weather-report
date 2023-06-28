@@ -1,99 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: #ffffff;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 450px;
-  height: 50px;
-}
-
-.follow {
-  border-radius: 30px;
-  width: 50px;
-  height: 50px;
-  background-color: #231f01;
-  //margin-right: 20px;
-}
-
-.follow img {
-  height: 25px;
-  width: 25px;
-  margin: 0;
-  position: relative;
-  top: 25%;
-  left: 25%;
-}
-
-.theme {
-  border-radius: 30px;
-  width: 50px;
-  height: 50px;
-  background-color: #231f01;
-}
-
-.theme img {
-  height: 25px;
-  width: 25px;
-  margin: 0;
-  position: relative;
-  top: 25%;
-  left: 25%;
-}
-
-.registration {
-  display: flex;
-  position: relative;
-  align-items: center;
-  flex-direction: row;
-  padding: 10px;
-  border-radius: 30px;
-  width: 235px;
-  height: 50px;
-  background-color: #5195fa;
-}
-
-.user-icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-radius: 30px;
-  width: 50px;
-  height: 50px;
-  background-color: #231f01;
-}
-
-.user-icon img {
-  height: 20px;
-  width: 20px;
-  margin: 0;
-  position: relative;
-  top: 28%;
-  left: 30%;
-}
-
-.registration-message {
-  font-size: 16px;
-  font-weight: 400;
-  font-family: 'Montserrat', sans-serif;
-  margin-left: 3em;
-  color: #ffffff;
-}
+@import "./components/globals.scss";
+@import "./components/header.scss";
+@import "./components/error.scss";
 
 .container {
   position: relative;
@@ -126,95 +33,11 @@ body {
   height: 100%;
   width: 100%;
   border-radius: 30px;
-  // background-image: linear-gradient(to right bottom, #caf6e5, #f4fcc1);
-  // animation: my-animation 3s linear infinite alternate;
 }
 
 .container__wrapper {
   position: relative;
   z-index: 1;
-}
-
-// .container.storm {
-//   background: linear-gradient(to left top, #97a8c4, #513a87);
-// }
-
-// .container.storm::after {
-//   background: linear-gradient(to right bottom, #97a8c4, #513a87);
-// }
-
-// .container.sunny {
-//   background: linear-gradient(to left top, #FFFCA8, #FFBD3E);
-// }
-
-// .container.sunny::after {
-//   background: linear-gradient(to right bottom, #FFFCA8, #FFBD3E);
-// }
-
-// .container.cloudy {
-//   background: linear-gradient(to left top, #caf6e5, #f4fcc1);
-// }
-
-// .container.cloudy::after {
-//   background: linear-gradient(to right bottom, #caf6e5, #f4fcc1);
-// }
-
-// .container.broken-clouds {
-//   background: linear-gradient(to left top, #bde2e9, #35475c);
-// }
-
-// .container.broken-clouds::after {
-//   background: linear-gradient(to right bottom, #bde2e9, #35475c);
-// }
-
-// .container.snow {
-//   background: linear-gradient(to left top, #c1f5ff, #418be2);
-// }
-
-// .container.snow::after {
-//   background: linear-gradient(to right bottom, #c1f5ff, #418be2);
-// }
-
-// .container.rain {
-//   background: linear-gradient(to left top, #5c93e8, #193e69);
-// }
-
-// .container.rain::after {
-//   background: linear-gradient(to right bottom, #5c93e8, #193e69);
-// }
-
-// .container.error {
-//   background: #ffb4b4;
-// }
-
-// .container.error::after {
-//   background: linear-gradient(to right bottom, #ffb4b4, #e35050);
-// }
-
-.container.fog {
-  background: linear-gradient(to left top, #8299c4, #92c9aa);
-}
-
-.container.fog::after {
-  background: linear-gradient(to right bottom, #8299c4, #92c9aa);
-}
-
-@keyframes my-animation {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
-}
-
-@keyframes draw {
-  from{
-    background-position:-35px 0;
-  }
-  to{
-    background-position:105% 0;
-  }
 }
 
 .search-box {
@@ -326,31 +149,4 @@ width: auto;
 .weather-details .item .value {
 font-size: 20px;
 font-weight: 500;
-}
-
-.error-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 40px;
-  overflow: hidden;
-  transition: all .2s ease-out;
-}
-
-.error-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-top: 40px;
-  background-color: #fff;
-  border-radius: 20px;
-  padding: 24px 24px;
-}
-
-.error-message {
-  font-size: 16px;
-  font-weight: 400;
-  font-family: 'Montserrat', sans-serif;
 }
