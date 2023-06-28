@@ -10,7 +10,7 @@ const renderError = () => {
 
   const errorBox = document.querySelector('.error-box');
   if (errorBox) errorBox.remove();
-  
+
   const errorBoxDiv = createErrorStructure();
 
   wrapper.append(errorBoxDiv);
@@ -19,7 +19,7 @@ const renderError = () => {
   switchColor(null);
 };
 
-const renderWeatherInfo = async () => {  
+const renderWeatherInfo = async () => {
   const cityName = document.querySelector('.search-input').value;
   const container = document.querySelector('.container');
   if (cityName !== '') {
@@ -28,18 +28,18 @@ const renderWeatherInfo = async () => {
   const wrapper = document.querySelector('.container__wrapper');
 
   const weatherData = await getWeatherData(cityName);
-  
+
   if (weatherData.message === 'city not found') {
     renderError();
     return;
   }
-  
+
   const errorBox = document.querySelector('.error-box');
   if (errorBox) errorBox.remove();
 
   const weatherBox = document.querySelector('.weather-box');
   if (weatherBox) weatherBox.remove();
-  
+
   const city = weatherData.name;
   const country = weatherData.sys.country;
   const {description, id} = weatherData.weather[0];
