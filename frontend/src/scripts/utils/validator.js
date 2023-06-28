@@ -1,3 +1,6 @@
+import { createHeaderStructure, createStartContainerStructure } from "./structure.js";
+import app from "../app.js";
+
 const isLength = (str, min, max) => str.length >= min && str.length <= max;
 
 const isAlphanumeric = (str) => /^[a-z0-9]+$/i.test(str);
@@ -33,7 +36,7 @@ const validate = (username, password) => {
   };
 };
 
-const checkForCorrectData = () => {
+const validateFormData = () => {
   const span = document.querySelector('.forgot');
   if (span) span.remove();
   
@@ -102,8 +105,36 @@ const checkForCorrectData = () => {
   if (validateResult.password === true) {
     passwordField.style.border = '1px solid #ffffff';
   }
+  
+  if (validateResult.username && validateResult.password === true) {
+    return {
+      validation: true,
+      username: username,
+    };
+  }
 };
 
-export {
-  checkForCorrectData,
+const registerHandler = () => {
+  const { validation, username } = validateFormData();
+  if (validation) {
+    const header = document.querySelector('.header');
+
+    const container = document.querySelector('.container');
+    container.remove();
+
+    const newContainer = createStartContainerStructure();
+    header.insertAdjacentElement('afterend', newContainer);
+
+    header.remove();
+
+    const newHeader = createHeaderStructure();
+    newHeader.setAttribute('id', 'authorized');
+    newContainer.insertAdjacentElement('beforebegin', newHeader);
+
+    const user = document.querySelector('.registration-message');
+    user.innerText = username;
+  }
+  app();
 };
+
+export default registerHandler;
