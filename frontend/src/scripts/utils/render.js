@@ -2,6 +2,16 @@ import { switchWeatherIcon, switchColor } from "./switch_view.js";
 import getWeatherData from "../api.js";
 import { createWeatherStructure, createErrorStructure } from "./structure.js";
 
+const setContainerOpenId = () => {
+  const container = document.querySelector('.container');
+  container.id = 'opened';
+};
+
+const setContainerRegisterId = () => {
+  const container = document.querySelector('.container');
+  container.id = 'register';
+};
+
 const renderError = () => {
   const wrapper = document.querySelector('.container__wrapper');
   
@@ -60,4 +70,6 @@ const renderWeatherInfo = async () => {
 
 export {
   renderWeatherInfo,
+  setContainerOpenId,
+  setContainerRegisterId,
 };

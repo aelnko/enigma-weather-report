@@ -95,7 +95,183 @@ const createErrorStructure = () => {
   return weatherBoxDiv;
 };
 
+const createRegistrationFormStructure = () => {
+  const container = document.querySelector('.container');
+  container.style.backgroundColor = '#78b6ff';
+  container.style.height = '650px';
+
+  const cancel = document.createElement('div');
+  cancel.classList.add('cancel-div');
+
+  const cancelButton = document.createElement('button');
+  cancelButton.classList.add('cancel-button');
+
+  const cancelImg = document.createElement('img');
+  cancelImg.classList.add('cancel-icon');
+  cancelImg.setAttribute('src', './image/close.png');
+
+  cancelButton.append(cancelImg);
+  cancel.append(cancelButton);
+  container.prepend(cancel);
+
+  const wrapper = document.querySelector('.container__wrapper');
+  wrapper.style.top = '20%';
+
+  const registrationForm = document.createElement('div');
+  registrationForm.classList.add('registration-form');
+
+  const field1 = document.createElement('div');
+  field1.classList.add('field1');
+
+  const fieldName1 = document.createElement('div');
+  fieldName1.id = 'field-name';
+  fieldName1.textContent = 'username';
+
+  const input1 = document.createElement('input');
+  input1.classList.add('registration-input');
+  input1.type = 'text';
+  input1.placeholder = 'enter your username';
+
+  field1.append(fieldName1, input1);
+
+  const field2 = document.createElement('div');
+  field2.classList.add('field2');
+
+  const fieldName2 = document.createElement('div');
+  fieldName2.id = 'field-name';
+  fieldName2.textContent = 'password';
+
+  const input2 = document.createElement('input');
+  input2.classList.add('registration-input');
+  input2.type = 'text';
+  input2.placeholder = 'enter your password';
+
+  field2.append(fieldName2, input2);
+
+  const registerButton = document.createElement('button');
+  registerButton.classList.add('register-button');
+  registerButton.textContent = 'REGISTER';
+
+  registrationForm.append(field1, field2, registerButton);
+
+  return registrationForm;
+};
+
+const createRegistrationWithoutButtonStructure = () => {
+  const currentTheme = document.body.id;
+  const colors = {
+    dark: '#ffffff',
+    light: '#231f01'
+  };
+  
+  const userIcon = document.createElement('button');
+  userIcon.classList.add('user-icon-js');
+  userIcon.style.backgroundColor = colors[currentTheme];
+
+  const id = document.body.id;
+  const userImg = document.createElement('img');
+  userImg.setAttribute('src', `./image/user-${id}-theme.png`);
+
+  userIcon.append(userImg);
+
+  return userIcon;
+};
+
+const createStartContainerStructure = () => {
+  const container = document.createElement('div');
+  container.classList.add('container');
+  container.id = 'closed';
+
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('container__wrapper');
+
+  const searchBox = document.createElement('div');
+  searchBox.classList.add('search-box');
+
+  const input = document.createElement('input');
+  input.classList.add('search-input');
+  input.type = 'text';
+  input.placeholder = 'Enter city name';
+
+  const button = document.createElement('button');
+  button.classList.add('image-button');
+
+  const image = document.createElement('img');
+  image.src = './image/search-button.png';
+  image.alt = 'search-button';
+
+  button.append(image);
+  searchBox.append(input, button);
+  wrapper.append(searchBox);
+  container.append(wrapper);
+
+  return container;
+};
+
+const createHeaderStructure = () => {
+  const currentTheme = document.body.id;
+  const colors = {
+    dark: '#ffffff',
+    light: '#231f01'
+  };
+
+  const header = document.createElement('div');
+  header.classList.add('header');
+
+  const followButton = document.createElement('button');
+  followButton.classList.add('follow');
+  followButton.style.backgroundColor = colors[currentTheme];
+  
+  const followImage = document.createElement('img');
+  followImage.src = `./image/follow-${currentTheme}-theme.png`;
+  followImage.alt = `follow-${currentTheme}-theme`;
+
+  followButton.append(followImage);
+
+  const themeButton = document.createElement('button');
+  themeButton.classList.add('theme');
+  themeButton.style.backgroundColor = colors[currentTheme];
+
+  const themeImage = document.createElement('img');
+  themeImage.src = `./image/button-${currentTheme}-theme.png`;
+  themeImage.alt = 'sunny-theme';
+
+  themeButton.append(themeImage);
+
+  const registrationDiv = document.createElement('div');
+  registrationDiv.classList.add('registration');
+
+  const registrationButton = document.createElement('button');
+  registrationButton.classList.add('registration-button');
+
+  const registrationSpan = document.createElement('span');
+  registrationSpan.classList.add('registration-message');
+  registrationSpan.textContent = 'registration';
+
+  registrationButton.append(registrationSpan);
+
+  const userButton = document.createElement('button');
+  userButton.classList.add('user-icon');
+  userButton.style.backgroundColor = colors[currentTheme];
+
+  const userImage = document.createElement('img');
+  userImage.src = `./image/user-${currentTheme}-theme.png`;
+  userImage.alt = `user-${currentTheme}-theme`;
+
+  userButton.append(userImage);
+
+  registrationDiv.append(registrationButton, userButton);
+
+  header.append(followButton, themeButton, registrationDiv);
+
+  return header;
+};
+
 export {
   createWeatherStructure,
   createErrorStructure,
+  createRegistrationFormStructure,
+  createRegistrationWithoutButtonStructure,
+  createStartContainerStructure,
+  createHeaderStructure,
 };

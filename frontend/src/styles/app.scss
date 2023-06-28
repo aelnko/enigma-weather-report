@@ -78,6 +78,19 @@ body {
   right: 0;
 }
 
+.user-icon-js {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #231f01;
+  padding: 13px 13px;
+}
+
+.user-icon-js img {
+  height: 20px;
+  width: 20px;
+}
+
 .user-icon img {
   height: 20px;
   width: 20px;
@@ -92,6 +105,67 @@ body {
   line-height: 0;
 }
 
+.registration-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.registration-input {
+  border: none;
+  border-radius: 30px;
+  width: 310px;
+  height: 50px;
+  padding-left: 20px;
+}
+
+.field1 {
+  margin-bottom: 35px;
+}
+
+.field1 #field-name {
+  margin-bottom: 10px;
+}
+
+.field2 #field-name {
+  margin-bottom: 10px;
+}
+
+.registration-form .forgot {
+  position: absolute;
+  top: 65%;
+  right: 45px;
+  text-align: right;
+  font-size: 12px;
+  color: #636363;
+}
+
+.register-button {
+  width: 310px;
+  height: 50px;
+  background-color: #5195fa;
+  border: none;
+  border-radius: 30px;
+  margin-top: 55px;
+}
+
+.cancel-div {
+  position: absolute;
+  top: 50px;
+  right: 80px;
+}
+
+.cancel-button {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+}
+
+.cancel-icon {
+  width: 20px;
+  height: 20px;
+}
 
 .container {
   position: relative;
@@ -245,7 +319,6 @@ input:focus-visible {
 }
 button {
     background-color: #fff;
-    padding: 20px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
