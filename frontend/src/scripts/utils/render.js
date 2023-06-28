@@ -21,6 +21,10 @@ const renderError = () => {
 
 const renderWeatherInfo = async () => {  
   const cityName = document.querySelector('.search-input').value;
+  const container = document.querySelector('.container');
+  if (cityName !== '') {
+    container.style.height = '650px';
+  }
   const wrapper = document.querySelector('.container__wrapper');
 
   const weatherData = await getWeatherData(cityName);

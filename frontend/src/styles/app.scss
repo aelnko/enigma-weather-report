@@ -98,11 +98,11 @@ body {
 .container {
   position: relative;
   width: 450px;
-  height: 650px;
+  height: 128px;
   padding: 40px;
   margin: 20px;
   border-radius: 30px;
-  background: linear-gradient(to left top, #caf6e5, #f4fcc1);
+  background-image: linear-gradient(to left top, #caf6e5, #f4fcc1);
   box-shadow: 0 0 20px 1px #bfa8bc;
   transition: all .5s;
   z-index: 0;
@@ -117,7 +117,7 @@ body {
   height: 100%;
   width: 100%;
   border-radius: 30px;
-  background: linear-gradient(to right bottom, #caf6e5, #f4fcc1);
+  background-image: linear-gradient(to right bottom, #caf6e5, #f4fcc1);
   animation: my-animation 3s linear infinite alternate;
 }
 
@@ -180,6 +180,14 @@ body {
 
 .container.error::after {
   background: linear-gradient(to right bottom, #ffb4b4, #e35050);
+}
+
+.container.fog {
+  background: linear-gradient(to left top, #8299c4, #92c9aa);
+}
+
+.container.fog::after {
+  background: linear-gradient(to right bottom, #8299c4, #92c9aa);
 }
 
 @keyframes my-animation {
