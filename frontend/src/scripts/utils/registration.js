@@ -6,7 +6,6 @@ import {
  } from "./structure.js";
 import registerApp from "../registerApp.js";
 import app from "../app.js";
-import switchTheme from "./theme.js";
 
 const closeRegistrationForm = () => {
   const container = document.querySelector('.container');

@@ -1,4 +1,4 @@
-import { openRegistrationForm, closeRegistrationForm } from "./utils/registration.js";
+import { closeRegistrationForm } from "./utils/registration.js";
 
 const registerApp = () => {
   const closeButton = document.querySelector('.cancel-button');

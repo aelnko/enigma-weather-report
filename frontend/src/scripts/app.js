@@ -1,5 +1,5 @@
-import { openRegistrationForm, closeRegistrationForm } from "./utils/registration.js";
-import { renderWeatherInfo, setContainerOpenId, setContainerRegisterId } from "./utils/render.js";
+import { openRegistrationForm } from "./utils/registration.js";
+import { renderWeatherInfo, setContainerOpenId } from "./utils/render.js";
 import switchTheme from "./utils/theme.js";
 
 const app = () => {
