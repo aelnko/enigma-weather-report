@@ -59,6 +59,7 @@ body {
   width: 235px;
   height: 50px;
   background-color: #5195fa;
+  position: relative;
 }
 
 .registration-button {
@@ -73,6 +74,8 @@ body {
   height: 50px;
   background-color: #231f01;
   padding: 13px 13px;
+  position: absolute;
+  right: 0;
 }
 
 .user-icon img {
@@ -81,12 +84,14 @@ body {
 }
 
 .registration-message {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   font-family: 'Montserrat', sans-serif;
-  margin-left: 3em;
+  margin: 0 auto;
   color: #ffffff;
+  line-height: 0;
 }
+
 
 .container {
   position: relative;
