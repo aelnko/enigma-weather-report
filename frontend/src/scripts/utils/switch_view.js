@@ -17,19 +17,21 @@ const switchGradient = (newClass) => {
     rain: 'linear-gradient(to left top, #5c93e8, #193e69)',
     fog: 'linear-gradient(to left top, #8299c4, #92c9aa)',
     error: 'linear-gradient(to left top, #ffb4b4, #e35050)',
-  }
+  };
+  
   const gradientLayer = document.querySelector('.gradient-layer');
   gradientLayer.style.opacity = 0;
   gradientLayer.style.background = gradients[newClass];
+  
   let start = Date.now();
   let timer = setInterval(() => {
     const timePassed = Date.now() - start;
-    let opacity = gradientLayer.style.opacity;
-    console.log(opacity);
-    gradientLayer.style.opacity = opacity + 0.001;
+    let opacity = parseFloat(gradientLayer.style.opacity);
+    opacity += 0.001;
+    gradientLayer.style.opacity = opacity.toString();
     if (timePassed > 1000) clearInterval(timer);
   }, 1);
-}
+};
 
 const switchColor = (id) => {
   const container = document.querySelector('.container');
