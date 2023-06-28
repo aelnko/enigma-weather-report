@@ -131,6 +131,7 @@ const createRegistrationFormStructure = () => {
   input1.classList.add('registration-input');
   input1.type = 'text';
   input1.placeholder = 'enter your username';
+  input1.setAttribute('id', 'user');
 
   field1.append(fieldName1, input1);
 
@@ -145,6 +146,7 @@ const createRegistrationFormStructure = () => {
   input2.classList.add('registration-input');
   input2.type = 'text';
   input2.placeholder = 'enter your password';
+  input2.setAttribute('id', 'password');
 
   field2.append(fieldName2, input2);
 
