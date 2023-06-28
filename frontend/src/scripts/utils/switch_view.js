@@ -25,6 +25,8 @@ const switchColor = (id) => {
     container.classList.add('snow');
   } else if (id >= 500 && id <= 531) {
     container.classList.add('rain');
+  } else if (id >= 701 && id <= 781) {
+    container.classList.add('fog');
   }
 };
 
@@ -45,6 +47,8 @@ const switchWeatherIcon = (id) => {
     weatherIcon.src = '../../image/snow.png';
   } else if (id >= 500 && id <= 531) {
     weatherIcon.src = '../../image/rain.png';
+  } else if (id >= 701 && id <= 781) {
+    weatherIcon.src = '../../image/fog.png';
   }
 };
 

@@ -86,7 +86,7 @@ const createErrorStructure = () => {
   descriptionDiv.style.marginTop = '64px'
 
   const errorDetailsDiv = document.createElement('div');
-  errorDetailsDiv.classList.add('error-details', 'error-message');
+  errorDetailsDiv.classList.add('error-details', 'message');
   errorDetailsDiv.textContent = 'It seems there is no such city, try to enter the name again';
   errorDetailsDiv.style.marginTop = '96px';
 
