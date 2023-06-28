@@ -7,25 +7,57 @@ const clearContainerClasses = (container) => {
   });
 };
 
+const switchGradient = (newClass) => {
+  const gradients = {
+    cloudy: 'linear-gradient(to left top, #caf6e5, #f4fcc1)',
+    storm: 'linear-gradient(to left top, #97a8c4, #513a87)',
+    sunny: 'linear-gradient(to left top, #FFFCA8, #FFBD3E)',
+    'broken-clouds': 'linear-gradient(to left top, #bde2e9, #35475c)',
+    snow: 'linear-gradient(to left top, #c1f5ff, #418be2)',
+    rain: 'linear-gradient(to left top, #5c93e8, #193e69)',
+    fog: 'linear-gradient(to left top, #8299c4, #92c9aa)',
+    error: 'linear-gradient(to left top, #ffb4b4, #e35050)',
+  }
+  const gradientLayer = document.querySelector('.gradient-layer');
+  gradientLayer.style.opacity = 0;
+  gradientLayer.style.background = gradients[newClass];
+  let start = Date.now();
+  let timer = setInterval(() => {
+    const timePassed = Date.now() - start;
+    let opacity = gradientLayer.style.opacity;
+    console.log(opacity);
+    gradientLayer.style.opacity = opacity + 0.001;
+    if (timePassed > 1000) clearInterval(timer);
+  }, 1);
+}
+
 const switchColor = (id) => {
   const container = document.querySelector('.container');
   clearContainerClasses(container);
 
   if (id === null) {
+    switchGradient('error');
     container.classList.add('error');
   } else if (id >= 200 && id <= 232) {
+    switchGradient('storm');
     container.classList.add('storm');
   } else if (id === 800) {
+    switchGradient('sunny');
     container.classList.add('sunny');
   } else if (id === 801 || id === 802) {
+    switchGradient('cloudy');
     container.classList.add('cloudy');
   } else if (id === 803 || id === 804) {
+    switchGradient('broken-clouds');
     container.classList.add('broken-clouds');
   } else if (id >= 600 && id <= 622) {
+    switchGradient('snow');
     container.classList.add('snow');
   } else if (id >= 500 && id <= 531) {
+    switchGradient('rain');
     container.classList.add('rain');
   } else if (id >= 701 && id <= 781) {
+    switchGradient('fog');
     container.classList.add('fog');
   }
 };

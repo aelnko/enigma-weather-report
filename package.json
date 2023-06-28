@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "gulp"
+    "start": "npm install && gulp"
   },
   "author": "",
   "license": "ISC",
