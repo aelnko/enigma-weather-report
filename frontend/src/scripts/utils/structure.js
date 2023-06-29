@@ -6,7 +6,6 @@ const createWeatherStructure = () => {
   weatherIconDiv.classList.add('weather-icon');
 
   const weatherIconImg = document.createElement('img');
-  weatherIconImg.setAttribute('src', '../../image/cloudy.png');
 
   weatherIconDiv.append(weatherIconImg);
 
@@ -266,10 +265,29 @@ const createHeaderStructure = () => {
   return header;
 };
 
+const createContainerStructureWithoutSearchBox = () => {
+  const container = document.createElement('div');
+  container.classList.add('container');
+
+  const gradientLayer = document.createElement('div');
+  gradientLayer.classList.add('gradient-layer');
+
+  const anotherGradientLayer = document.createElement('div');
+  anotherGradientLayer.classList.add('another-gradient-layer');
+
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('container__wrapper');
+
+  container.append(gradientLayer, anotherGradientLayer, wrapper);
+  
+  return container;
+};
+
 export {
   createWeatherStructure,
   createErrorStructure,
   createRegistrationFormStructure,
   createStartContainerStructure,
   createHeaderStructure,
+  createContainerStructureWithoutSearchBox
 };

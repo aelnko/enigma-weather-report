@@ -30,13 +30,19 @@ const renderError = () => {
 };
 
 const renderWeatherInfo = async () => {  
-  const cityName = document.querySelector('.search-input').value;
+  let cityName;
+  const name = document.querySelector('.search-input');
+  if (name) {
+    cityName = name.value;
+  } else {
+    cityName = 'London';
+  }
   const container = document.querySelector('.container');
   if (cityName !== '') {
     container.style.height = '650px';
   }
   const wrapper = document.querySelector('.container__wrapper');
-
+  console.log(cityName)
   const weatherData = await getWeatherData(cityName);
   
   if (weatherData.message === 'city not found') {
