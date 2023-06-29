@@ -36,6 +36,19 @@ body {
   }
 }
 
+.follow::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('../image/follow-light-theme.png');
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;;
+  top: 0;
+  left: 0;
+}
+
 .follow-wrap {
   width: 150px;
   border-top-left-radius: 50px;
@@ -72,6 +85,43 @@ body {
   transition:.3s;
   border-radius: 100px;
   top: 0;
+}
+
+.follow.exit::before {
+  content: "";
+  background-image: none;
+  width: 1.5px;
+  height: 30px;
+  left: 24px;
+  top: 9px;
+  background-color: #fff;
+  transform: rotate(45deg);
+  border-radius: 3px;
+}
+
+.follow.exit::after {
+  content: "";
+  width: 1.5px;
+  height: 30px;
+  left: 24px;
+  top: 9px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+  position: absolute;
+  border-radius: 3px;
+}
+
+.follow.exit + .follow-button {
+  width: 175px;
+  border-radius: 100px;
+} 
+
+.btn-light.follow.exit::before {
+  background-color: #000;
+}
+
+.btn-light.follow.exit::after {
+  background-color: #000;
 }
 
 .theme {

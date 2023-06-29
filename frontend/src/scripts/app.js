@@ -4,7 +4,6 @@ import { openRegistrationForm } from "./utils/registration.js";
 import { renderWeatherInfo, setContainerOpenId } from "./utils/render.js";
 import switchTheme from "./utils/theme.js";
 import { addToFavourites } from "./utils/addToFavourites.js";
-import { showSlide } from "./utils/slider.js";
 
 const app = () => {
   const searchButton = document.querySelector('.image-button');
