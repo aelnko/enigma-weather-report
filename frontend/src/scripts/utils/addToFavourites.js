@@ -7,8 +7,10 @@ const addToFavourites = () => {
 
   if (!cities.includes(lowerCaseCity)) {
     cities.push(lowerCaseCity);
+    favoritesButton.classList.add('active');
   } else {
     cities.pop();
+    favoritesButton.classList.remove('active');
   }
 
   favoritesButton.classList.toggle('active');
