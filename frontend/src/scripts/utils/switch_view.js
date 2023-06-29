@@ -1,3 +1,5 @@
+import checkForDayTime from "./time.js";
+
 const clearContainerClasses = (container) => {
   container.classList.forEach((item) => {
     if (item !== 'container') {
@@ -31,15 +33,16 @@ const switchColor = (id) => {
 
 const switchWeatherIcon = (id) => {
   const weatherIcon = document.querySelector('.weather-icon img');
+  const dayTime = checkForDayTime();
 
   if (id === null) {
     weatherIcon.src = '../../image/warning.png';
   } else if (id >= 200 && id <= 232) {
     weatherIcon.src = '../../image/storm.png';
   } else if (id === 800) {
-    weatherIcon.src = '../../image/sunny.png';
+    weatherIcon.src = `../../image/${dayTime}-sunny.png`;
   } else if (id === 801 || id === 802) {
-    weatherIcon.src = '../../image/cloudy.png';
+    weatherIcon.src = `../../image/${dayTime}-cloudy.png`;
   } else if (id === 803 || id === 804) {
     weatherIcon.src = '../../image/overcast.png';
   } else if (id >= 600 && id <= 622) {
