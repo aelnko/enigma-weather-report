@@ -377,6 +377,10 @@ body {
   }
 }
 
+.favourite-button.active {
+  background-image: url('../image/red-heart-1.png');
+}
+
 button {
     background-color: #fff;
     border-radius: 50%;
