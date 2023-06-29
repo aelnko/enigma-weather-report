@@ -14,30 +14,37 @@
 
 <body id="light">
   <div class="header">
-    <button class="follow btn-dark">
-      <img src="./image/follow-light-theme.png" alt="follow-light-theme">
-    </button>
-    <button class="theme btn-dark">
+    <div class="follow-wrap">
+      <button class="follow btn-dark" id="switch-theme">
+        <img src="./image/follow-light-theme.png" alt="follow-light-theme">
+      </button>
+      <button class="follow-button">
+        <span class="follow-message">favorites</span>
+      </button>
+    </div>
+    <button class="theme btn-dark" id="switch-theme">
       <img src="./image/button-light-theme.png" alt="sunny-theme">
     </button>
     <div class="registration">
+      <button class="user-icon btn-dark" id="switch-theme">
+        <img src="./image/user-light-theme.png" alt="user-light-theme">
+      </button>
       <button class="registration-button">
         <span class="registration-message">registration</span>
-      </button>
-      <button class="user-icon btn-dark">
-        <img src="./image/user-light-theme.png" alt="user-light-theme">
       </button>
     </div>
   </div>
   <div class="container" id="closed">
-    <div class="container__wrapper">
-      <div class="search-box">
-        <input class="search-input" type="text" placeholder="Enter city name">
-        <button class="image-button">
-          <img src="./image/search-button.png" alt="search-button">
-        </button>
+    <div class="gradient-layer"></div>
+    <div class="another-gradient-layer"></div>
+      <div class="container__wrapper">
+        <div class="search-box">
+          <input class="search-input" type="text" placeholder="Enter city name">
+          <button class="image-button">
+            <img src="./image/search-button.png" alt="search-button">
+          </button>
+        </div>
       </div>
-    </div>
   </div>
 
   <script type="module" src="scripts/app.js" id="script"></script>

@@ -159,29 +159,16 @@ const createRegistrationFormStructure = () => {
   return registrationForm;
 };
 
-const createRegistrationWithoutButtonStructure = () => {
-  const currentTheme = document.body.id;
-  const colors = {
-    dark: 'btn-light',
-    light: 'btn-dark'
-  };
-  
-  const userIcon = document.createElement('button');
-  userIcon.classList.add('user-icon-js');
-  userIcon.classList.add(colors[currentTheme]);
-
-  const userImg = document.createElement('img');
-  userImg.setAttribute('src', `./image/user-${currentTheme}-theme.png`);
-
-  userIcon.append(userImg);
-
-  return userIcon;
-};
-
 const createStartContainerStructure = () => {
   const container = document.createElement('div');
   container.classList.add('container');
   container.id = 'closed';
+
+  const gradientLayer = document.createElement('div');
+  gradientLayer.classList.add('gradient-layer');
+
+  const anotherGradientLayer = document.createElement('div');
+  anotherGradientLayer.classList.add('another-gradient-layer');
 
   const wrapper = document.createElement('div');
   wrapper.classList.add('container__wrapper');
@@ -204,7 +191,7 @@ const createStartContainerStructure = () => {
   button.append(image);
   searchBox.append(input, button);
   wrapper.append(searchBox);
-  container.append(wrapper);
+  container.append(gradientLayer, anotherGradientLayer, wrapper);
 
   return container;
 };
@@ -219,15 +206,26 @@ const createHeaderStructure = () => {
   const header = document.createElement('div');
   header.classList.add('header');
 
-  const followButton = document.createElement('button');
-  followButton.classList.add('follow');
-  followButton.classList.add(colors[currentTheme]);
+  const follow = document.createElement('div');
+  follow.classList.add('follow-wrap');
+
+  const followButton1 = document.createElement('button');
+  followButton1.classList.add('follow', colors[currentTheme]);
+
+  const followButton2 = document.createElement('button');
+  followButton2.classList.add('follow-button');
+
+  const followSpan = document.createElement('span');
+  followSpan.classList.add('follow-message');
+  followSpan.innerText = 'favorites';
   
   const followImage = document.createElement('img');
   followImage.src = `./image/follow-${currentTheme}-theme.png`;
   followImage.alt = `follow-${currentTheme}-theme`;
 
-  followButton.append(followImage);
+  followButton1.append(followImage);
+  followButton2.append(followSpan);
+  follow.append(followButton1, followButton2);
 
   const themeButton = document.createElement('button');
   themeButton.classList.add('theme');
@@ -242,6 +240,14 @@ const createHeaderStructure = () => {
   const registrationDiv = document.createElement('div');
   registrationDiv.classList.add('registration');
 
+  const userButton = document.createElement('button');
+  userButton.classList.add('user-icon');
+  userButton.classList.add(colors[currentTheme]);
+
+  const userImage = document.createElement('img');
+  userImage.src = `./image/user-${currentTheme}-theme.png`;
+  userImage.alt = `user-${currentTheme}-theme`;
+
   const registrationButton = document.createElement('button');
   registrationButton.classList.add('registration-button');
 
@@ -251,19 +257,11 @@ const createHeaderStructure = () => {
 
   registrationButton.append(registrationSpan);
 
-  const userButton = document.createElement('button');
-  userButton.classList.add('user-icon');
-  userButton.classList.add(colors[currentTheme]);
-
-  const userImage = document.createElement('img');
-  userImage.src = `./image/user-${currentTheme}-theme.png`;
-  userImage.alt = `user-${currentTheme}-theme`;
-
   userButton.append(userImage);
 
-  registrationDiv.append(registrationButton, userButton);
+  registrationDiv.append(userButton, registrationButton);
 
-  header.append(followButton, themeButton, registrationDiv);
+  header.append(follow, themeButton, registrationDiv);
 
   return header;
 };
@@ -272,7 +270,6 @@ export {
   createWeatherStructure,
   createErrorStructure,
   createRegistrationFormStructure,
-  createRegistrationWithoutButtonStructure,
   createStartContainerStructure,
   createHeaderStructure,
 };

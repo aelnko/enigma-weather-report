@@ -1,2 +1,4 @@
 node_modules/
-frontend/dist/
+frontend/dist
+frontend/src/styles/app.css
+frontend/src/styles/app.css.map

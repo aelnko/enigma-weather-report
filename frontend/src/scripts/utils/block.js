@@ -1,5 +1,5 @@
 const blockRegistrationButtonWhenAuthorized = () => {
-  const registrationButton = document.querySelector('.registration-button');
+  const registrationButton = document.querySelector('.user-icon');
   const id = document.querySelector('.header').id;
 
   if (id === 'authorized') {

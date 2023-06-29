@@ -1,7 +1,6 @@
 import { 
   createHeaderStructure,
   createRegistrationFormStructure,
-  createRegistrationWithoutButtonStructure,
   createStartContainerStructure,
  } from "./structure.js";
 import registerApp from "../registerApp.js";
@@ -27,10 +26,8 @@ const openRegistrationForm = () => {
   const wrapper = document.querySelector('.container__wrapper');
   wrapper.innerHTML = '';
 
-  const header = document.querySelector('.header');
-  document.querySelector('div .registration').remove();
-  const registration = createRegistrationWithoutButtonStructure();
-  header.append(registration);
+  const registerButton = document.querySelector('.registration-button');
+  registerButton.remove();
 
   const registrationForm = createRegistrationFormStructure();
   wrapper.append(registrationForm);
