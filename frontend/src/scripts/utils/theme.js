@@ -23,7 +23,7 @@ const switchTheme = () => {
   
   const reverse = (theme) => {
     const headerDiv = document.querySelector('.header');
-    const switchButtons = headerDiv.querySelectorAll('button');
+    const switchButtons = headerDiv.querySelectorAll('#switch-theme');
     const images = headerDiv.querySelectorAll('img');
 
     switchButtons.forEach((button) => {

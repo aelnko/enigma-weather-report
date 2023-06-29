@@ -6,7 +6,7 @@ import switchTheme from "./utils/theme.js";
 const app = () => {
   const searchButton = document.querySelector('.image-button');
   const themeButton = document.querySelector('.theme');
-  const registrationButton = document.querySelector('.registration-button');
+  const registrationButton = document.querySelector('.user-icon');
 
   searchButton.addEventListener('click', renderWeatherInfo);
   searchButton.addEventListener('click', setContainerOpenId);

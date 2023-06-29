@@ -1,1 +1,1 @@
-const blockRegistrationButtonWhenAuthorized=()=>{const t=document.querySelector(".registration-button");"authorized"===document.querySelector(".header").id&&(t.disabled="disabled")};export default blockRegistrationButtonWhenAuthorized;
+const blockRegistrationButtonWhenAuthorized=()=>{const e=document.querySelector(".user-icon");"authorized"===document.querySelector(".header").id&&(e.disabled="disabled")};export default blockRegistrationButtonWhenAuthorized;
