@@ -322,6 +322,11 @@ button {
     cursor: pointer;
     color: #fff;
 }
+
+button:disabled {
+  cursor: default;
+}
+
 .image-button {
   background-image: url('../image/search-button.png');
   background-size: cover;
