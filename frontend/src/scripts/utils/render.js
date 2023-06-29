@@ -29,20 +29,19 @@ const renderError = () => {
   switchColor(null);
 };
 
-const renderWeatherInfo = async () => {  
+const renderWeatherInfo = async (followCity) => {  
   let cityName;
   const name = document.querySelector('.search-input');
   if (name) {
     cityName = name.value;
   } else {
-    cityName = 'London';
+    cityName = followCity;
   }
   const container = document.querySelector('.container');
   if (cityName !== '') {
     container.style.height = '650px';
   }
   const wrapper = document.querySelector('.container__wrapper');
-  console.log(cityName)
   const weatherData = await getWeatherData(cityName);
   
   if (weatherData.message === 'city not found') {
@@ -72,6 +71,8 @@ const renderWeatherInfo = async () => {
 
   switchWeatherIcon(id);
   switchColor(id);
+
+  return wrapper;
 };
 
 export {

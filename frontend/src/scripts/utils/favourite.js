@@ -1,7 +1,8 @@
+import { favourites } from "./addToFavourites.js";
 import { renderWeatherInfo } from "./render.js";
 import { createContainerStructureWithoutSearchBox } from "./structure.js";
 
-const followButtonHandler = async () => {
+const createWeatherCard = async () => {
   const header = document.querySelector('.header');
   header.remove();
 
@@ -11,12 +12,19 @@ const followButtonHandler = async () => {
   const newContainer = createContainerStructureWithoutSearchBox();
   newContainer.style.height = '650px';
 
-  const body = document.body;
-  body.append(newContainer);
+  const script = document.querySelector('#script');
+  script.insertAdjacentElement('beforebegin', newContainer)
 
-  const weatherBox = await renderWeatherInfo();
-  newContainer.append(weatherBox);
+  const followCities = favourites();
 
+  for (let i = 0; i < followCities.length; i += 1) {
+    const weatherBox = await renderWeatherInfo(followCities[i]);
+    newContainer.append(weatherBox);
+  }
+};
+
+const followButtonHandler = () => {
+  return createWeatherCard();
 };
 
 export default followButtonHandler;
