@@ -162,17 +162,16 @@ const createRegistrationFormStructure = () => {
 const createRegistrationWithoutButtonStructure = () => {
   const currentTheme = document.body.id;
   const colors = {
-    dark: '#ffffff',
-    light: '#0f1024'
+    dark: 'btn-light',
+    light: 'btn-dark'
   };
   
   const userIcon = document.createElement('button');
   userIcon.classList.add('user-icon-js');
-  userIcon.style.backgroundColor = colors[currentTheme];
+  userIcon.classList.add(colors[currentTheme]);
 
-  const id = document.body.id;
   const userImg = document.createElement('img');
-  userImg.setAttribute('src', `./image/user-${id}-theme.png`);
+  userImg.setAttribute('src', `./image/user-${currentTheme}-theme.png`);
 
   userIcon.append(userImg);
 
@@ -213,8 +212,8 @@ const createStartContainerStructure = () => {
 const createHeaderStructure = () => {
   const currentTheme = document.body.id;
   const colors = {
-    dark: '#ffffff',
-    light: '#0f1024'
+    dark: 'btn-light',
+    light: 'btn-dark'
   };
 
   const header = document.createElement('div');
@@ -222,7 +221,7 @@ const createHeaderStructure = () => {
 
   const followButton = document.createElement('button');
   followButton.classList.add('follow');
-  followButton.style.backgroundColor = colors[currentTheme];
+  followButton.classList.add(colors[currentTheme]);
   
   const followImage = document.createElement('img');
   followImage.src = `./image/follow-${currentTheme}-theme.png`;
@@ -232,7 +231,7 @@ const createHeaderStructure = () => {
 
   const themeButton = document.createElement('button');
   themeButton.classList.add('theme');
-  themeButton.style.backgroundColor = colors[currentTheme];
+  themeButton.classList.add(colors[currentTheme]);
 
   const themeImage = document.createElement('img');
   themeImage.src = `./image/button-${currentTheme}-theme.png`;
@@ -254,7 +253,7 @@ const createHeaderStructure = () => {
 
   const userButton = document.createElement('button');
   userButton.classList.add('user-icon');
-  userButton.style.backgroundColor = colors[currentTheme];
+  userButton.classList.add(colors[currentTheme]);
 
   const userImage = document.createElement('img');
   userImage.src = `./image/user-${currentTheme}-theme.png`;

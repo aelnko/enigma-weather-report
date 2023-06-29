@@ -12,6 +12,14 @@ const switchTheme = () => {
     const nextIndex = (currentIndex + 1) % themes.length;
     return themes[nextIndex];
   };
+
+  const clearContainerClasses = (button) => {
+    button.classList.forEach((item) => {
+      if (item === `btn-${getNextTheme(currentTheme)}`) {
+        button.classList.remove(item);
+      }
+    });
+  };
   
   const reverse = (theme) => {
     const headerDiv = document.querySelector('.header');
@@ -19,7 +27,8 @@ const switchTheme = () => {
     const images = headerDiv.querySelectorAll('img');
 
     switchButtons.forEach((button) => {
-      button.style.backgroundColor = colors[currentTheme];
+      clearContainerClasses(button);
+      button.classList.add(`btn-${currentTheme}`);
       if (button.classList.contains('registration-button')) {
         button.style.backgroundColor = colors.blue;
       }
