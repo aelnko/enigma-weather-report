@@ -309,12 +309,14 @@ body {
 .search-box {
   position: relative;
   display: flex;
-  gap: 15px;
   color: #000000;
+  justify-content: space-between;
+  gap: 5px;
+  align-items: center;
 }
 .search-box input {
   padding: 10px 20px;
-  width: 90%;
+  width: 98%;
   border: none;
   border-radius: 50px;
   font-size: 16px;
@@ -340,6 +342,10 @@ body {
   text-transform: uppercase;
   outline: none;
   color: rgba(0, 0, 0, 0.7294117647);
+}
+
+.search-input__wrap {
+  width: 100%;
 }
 
 .search-bar .search {
@@ -371,7 +377,11 @@ button:disabled {
 
 .image-button {
   background-image: url("../image/search-button.png");
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 50px;
+  height: 43px;
+  background-color: #fff;
 }
 
 .weather-box {
