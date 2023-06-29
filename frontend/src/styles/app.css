@@ -353,6 +353,23 @@ body {
   color: #000000;
 }
 
+.favourite-button {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-image: url("../image/follow-dark-theme.png");
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: 50% 50%;
+  background-color: transparent;
+  right: 60px;
+  top: 6px;
+  opacity: 30%;
+}
+.favourite-button:hover {
+  background-image: url("../image/red-heart-1.png");
+}
+
 button {
   background-color: #fff;
   border-radius: 50%;
