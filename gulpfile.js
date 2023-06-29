@@ -54,6 +54,7 @@ const taskWatch = () => {
     './frontend/src/styles/**/*.scss',
     './frontend/src/scripts/**/*.js',
     './frontend/src/*.html',
+    './frontend/src/image/*.png'
   ],
     gulp.series(html, styles, scripts)
   );

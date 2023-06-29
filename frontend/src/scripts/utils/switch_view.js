@@ -1,5 +1,4 @@
 const clearContainerClasses = (container) => {
-  console.log(container.classList)
   container.classList.forEach((item) => {
     if (item !== 'container') {
       container.classList.remove(item);

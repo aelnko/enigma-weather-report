@@ -27,26 +27,24 @@ body {
   border-radius: 30px;
   width: 50px;
   height: 50px;
-  background-color: #231f01;
   padding: 13px 13px;
-}
 
-.follow img {
-  height: 25px;
-  width: 25px;
+  img {
+    height: 25px;
+    width: 25px;
+  }
 }
 
 .theme {
   border-radius: 30px;
   width: 50px;
   height: 50px;
-  background-color: #231f01;
   padding: 13px 13px;
-}
 
-.theme img {
-  height: 25px;
-  width: 25px;
+  img {
+    height: 25px;
+    width: 25px;
+  }
 }
 
 .registration {
@@ -72,15 +70,27 @@ body {
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  background-color: #231f01;
   padding: 13px 13px;
   position: absolute;
   right: 0;
+
+  img {
+    height: 20px;
+    width: 20px;
+  }
 }
 
-.user-icon img {
-  height: 20px;
-  width: 20px;
+.user-icon-js {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #231f01;
+  padding: 13px 13px;
+
+  img {
+    height: 20px;
+    width: 20px;
+  }
 }
 
 .registration-message {
@@ -92,6 +102,61 @@ body {
   line-height: 0;
 }
 
+.registration-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.registration-input {
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+  width: 310px;
+  height: 50px;
+  padding-left: 20px;
+}
+
+.field1 {
+  margin-bottom: 35px;
+}
+
+#field-name {
+  margin-bottom: 10px;
+}
+
+.forgot {
+  text-align: right;
+  font-size: 12px;
+  color: #e35050;
+  margin-top: 5px;
+}
+
+.register-button {
+  width: 310px;
+  height: 50px;
+  background-color: #5195fa;
+  border: none;
+  border-radius: 30px;
+  margin-top: 55px;
+}
+
+.cancel-div {
+  position: absolute;
+  top: 50px;
+  right: 80px;
+}
+
+.cancel-button {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+}
+
+.cancel-icon {
+  width: 20px;
+  height: 20px;
+}
 
 .container {
   position: relative;
@@ -104,19 +169,19 @@ body {
   box-shadow: 0 0 20px 1px #bfa8bc;
   transition: all .5s;
   z-index: 0;
-}
 
-.container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  border-radius: 30px;
-  background-image: linear-gradient(to right bottom, #caf6e5, #f4fcc1);
-  animation: my-animation 3s linear infinite alternate;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    background-image: linear-gradient(to right bottom, #caf6e5, #f4fcc1);
+    animation: my-animation 3s linear infinite alternate;
+  }
 }
 
 .container__wrapper {
@@ -124,68 +189,68 @@ body {
   z-index: 1;
 }
 
-.container.storm {
+.storm {
   background: linear-gradient(to left top, #97a8c4, #513a87);
+
+  &::after {
+    background: linear-gradient(to right bottom, #97a8c4, #513a87);
+  }
 }
 
-.container.storm::after {
-  background: linear-gradient(to right bottom, #97a8c4, #513a87);
-}
-
-.container.sunny {
+.sunny {
   background: linear-gradient(to left top, #FFFCA8, #FFBD3E);
+
+  &::after {
+    background: linear-gradient(to right bottom, #FFFCA8, #FFBD3E);
+  }
 }
 
-.container.sunny::after {
-  background: linear-gradient(to right bottom, #FFFCA8, #FFBD3E);
-}
-
-.container.cloudy {
+.cloudy {
   background: linear-gradient(to left top, #caf6e5, #f4fcc1);
+
+  &::after {
+    background: linear-gradient(to right bottom, #caf6e5, #f4fcc1);
+  }
 }
 
-.container.cloudy::after {
-  background: linear-gradient(to right bottom, #caf6e5, #f4fcc1);
-}
-
-.container.broken-clouds {
+.broken-clouds {
   background: linear-gradient(to left top, #bde2e9, #35475c);
+
+  &::after {
+    background: linear-gradient(to right bottom, #bde2e9, #35475c);  
+  }
 }
 
-.container.broken-clouds::after {
-  background: linear-gradient(to right bottom, #bde2e9, #35475c);
-}
-
-.container.snow {
+.snow {
   background: linear-gradient(to left top, #c1f5ff, #418be2);
+
+  &::after {
+    background: linear-gradient(to right bottom, #c1f5ff, #418be2);
+  }
 }
 
-.container.snow::after {
-  background: linear-gradient(to right bottom, #c1f5ff, #418be2);
-}
-
-.container.rain {
+.rain {
   background: linear-gradient(to left top, #5c93e8, #193e69);
+
+  &::after {
+    background: linear-gradient(to right bottom, #5c93e8, #193e69);  
+  }
 }
 
-.container.rain::after {
-  background: linear-gradient(to right bottom, #5c93e8, #193e69);
-}
-
-.container.error {
+.error {
   background: linear-gradient(to left top, #ffb4b4, #e35050);
+
+  &::after {
+    background: linear-gradient(to right bottom, #ffb4b4, #e35050);
+  }
 }
 
-.container.error::after {
-  background: linear-gradient(to right bottom, #ffb4b4, #e35050);
-}
-
-.container.fog {
+.fog {
   background: linear-gradient(to left top, #8299c4, #92c9aa);
-}
 
-.container.fog::after {
-  background: linear-gradient(to right bottom, #8299c4, #92c9aa);
+  &::after {
+    background: linear-gradient(to right bottom, #8299c4, #92c9aa);
+  }
 }
 
 @keyframes my-animation {
@@ -211,9 +276,8 @@ body {
   display: flex;
   gap: 15px;
   color: #000000;
-}
 
-.search-box input {
+  input {
     padding: 10px 20px;
     width: 90%;
     border: none;
@@ -221,53 +285,79 @@ body {
     font-size: 16px;
     color: #000000;
 
+    &::placeholder {
+      text-transform: lowercase;
+      font-weight: 500;
+      font-size: 16px;
+      opacity: 0.5;
+      color: #878787
+    }
+
+    &:focus-visible {
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      outline: none;
+      color:#000000ba;
+    }
+  } 
 }
 
-input::placeholder {
-  text-transform: lowercase;
-  font-weight: 500;
-  font-size: 16px;
-  opacity: 0.5;
-  color: #878787
+// что это вообще
+.search-bar {
+    .search {
+      font-size: 28px;
+      color: #000000;
+    }
 }
 
-input:focus-visible {
-    font-size: 16px;
-    font-weight: 500;
-    text-transform: uppercase;
-    outline: none;
-    color:#000000ba;
-}
-
-.search-bar .search {
-    font-size: 28px;
-    color: #000000;
-}
 button {
     background-color: #fff;
-    padding: 20px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
     color: #fff;
+
+    &:disabled {
+      cursor: default;
+    }
 }
+
+.btn-light {
+  background-color: #ffffff;
+
+  &:hover {
+    background-color: #ffffffce;;
+  }
+}
+
+.btn-dark {
+  background-color: #0f1024;
+
+  &:hover {
+    background-color: #0f1024df;
+  }
+}
+
 .image-button {
   background-image: url('../image/search-button.png');
   background-size: cover;
 }
 
 .weather-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 20px;
-    overflow: hidden;
-    transition: all .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+  overflow: hidden;
+  transition: all .2s;
 }
 
-.weather-icon img {
+.weather-icon {
+  img {
     width: 190px;
+  }
 }
 
 .current-temp {
@@ -300,21 +390,22 @@ button {
   background-color: #fff;
   border-radius: 20px;
   padding: 24px 24px;
-}
-.weather-details .item {
-display: flex;
-gap: 10px;
-font-size: 12px;
-font-weight: 400;
-}
 
-.weather-details .item .icon {
-width: auto;
-}
+  .item {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 400;
 
-.weather-details .item .value {
-font-size: 20px;
-font-weight: 500;
+    .icon {
+      width: auto;
+    }
+
+    .value {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
 }
 
 .error-box {
