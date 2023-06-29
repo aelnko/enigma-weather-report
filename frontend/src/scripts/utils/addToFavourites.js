@@ -5,10 +5,11 @@ const addToFavourites = () => {
   const favoritesButton = document.querySelector('.favourite-button');
   if (!cities.includes(city)) {
     cities.push(city);
+    favoritesButton.classList.add('active');
   } else {
     cities.pop();
+    favoritesButton.classList.remove('active');
   }
-  favoritesButton.classList.toggle('active');
   console.log(cities);
 };
 
