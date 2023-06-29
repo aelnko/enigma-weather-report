@@ -163,7 +163,7 @@ const createRegistrationWithoutButtonStructure = () => {
   const currentTheme = document.body.id;
   const colors = {
     dark: '#ffffff',
-    light: '#231f01'
+    light: '#0f1024'
   };
   
   const userIcon = document.createElement('button');
@@ -214,7 +214,7 @@ const createHeaderStructure = () => {
   const currentTheme = document.body.id;
   const colors = {
     dark: '#ffffff',
-    light: '#231f01'
+    light: '#0f1024'
   };
 
   const header = document.createElement('div');

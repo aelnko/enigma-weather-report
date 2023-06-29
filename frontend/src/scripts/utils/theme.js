@@ -3,7 +3,7 @@ const switchTheme = () => {
   const themes = ['light', 'dark'];
   const colors = {
     light: '#ffffff',
-    dark: '#231f01',
+    dark: '#0f1024',
     blue: '#5195fa',
   };
 
