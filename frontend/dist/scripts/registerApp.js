@@ -1,0 +1,1 @@
+import{closeRegistrationForm}from"./utils/registration.js";import registerHandler from"./utils/validator.js";const registerApp=()=>{const e=document.querySelector(".cancel-button"),t=document.querySelector(".register-button");e.addEventListener("click",closeRegistrationForm),t.addEventListener("click",registerHandler)};export default registerApp;

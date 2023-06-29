@@ -3,7 +3,7 @@ import registerHandler from "./utils/validator.js";
 
 const registerApp = () => {
   const closeButton = document.querySelector('.cancel-button');
-  const registrationButton = document.querySelector('.register-button');
+  const registrationButton = document.querySelector('.registration-button');
 
   closeButton.addEventListener('click', closeRegistrationForm);
   registrationButton.addEventListener('click', registerHandler);

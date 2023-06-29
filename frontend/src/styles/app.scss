@@ -28,11 +28,50 @@ body {
   width: 50px;
   height: 50px;
   padding: 13px 13px;
+  background-color: #231f01;
 
   img {
     height: 25px;
     width: 25px;
   }
+}
+
+.follow-wrap {
+  width: 150px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  position: relative;
+}
+
+.follow-button {
+  width: 50px;
+  height: 50px;
+  background-color: #5195fa;
+  position: absolute;
+  transition: .5s ease;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.follow-message {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 auto;
+  color: #ffffff;
+  line-height: 0;
+  padding-left: 30px;
+}
+
+.follow:hover + .follow-button {
+  position: absolute;
+  display: block;
+  margin: 0;
+  width: 175px;
+  transition:.3s;
+  border-radius: 100px;
+  top: 0;
 }
 
 .theme {
@@ -49,35 +88,49 @@ body {
 
 .registration {
   display: flex;
-  position: relative;
   align-items: center;
   flex-direction: row;
-  padding: 10px;
   border-radius: 30px;
-  width: 235px;
+  width: 150px;
   height: 50px;
-  background-color: #5195fa;
   position: relative;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;  
 }
 
 .registration-button {
-  width: 185px;
+  width: 50px;
   height: 50px;
   background-color: #5195fa;
+  position: absolute;
+  transition: .5s ease;
+  right: 0;
+  overflow: hidden;
 }
 
 .user-icon {
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  background-color: #231f01;
   padding: 13px 13px;
   position: absolute;
   right: 0;
+  z-index: 1;
 
   img {
     height: 20px;
     width: 20px;
   }
+}
+
+.user-icon:hover + .registration-button {
+  position: absolute;
+  display: block;
+  margin: 0;
+  width: 175px;
+  transition:.3s;
+  border-radius: 100px;
 }
 
 .user-icon-js {
@@ -94,12 +147,13 @@ body {
 }
 
 .registration-message {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   font-family: 'Montserrat', sans-serif;
   margin: 0 auto;
   color: #ffffff;
   line-height: 0;
+  padding-right: 35px;
 }
 
 .registration-form {
@@ -145,6 +199,7 @@ body {
   position: absolute;
   top: 50px;
   right: 80px;
+  z-index: 1;
 }
 
 .cancel-button {
@@ -179,8 +234,6 @@ body {
     height: 100%;
     width: 100%;
     border-radius: 30px;
-    background-image: linear-gradient(to right bottom, #caf6e5, #f4fcc1);
-    animation: my-animation 3s linear infinite alternate;
   }
 }
 
@@ -189,68 +242,57 @@ body {
   z-index: 1;
 }
 
-.storm {
-  background: linear-gradient(to left top, #97a8c4, #513a87);
-
-  &::after {
-    background: linear-gradient(to right bottom, #97a8c4, #513a87);
-  }
+.gradient-layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 30px;
+  top: 0;
+  left: 0;
 }
 
-.sunny {
-  background: linear-gradient(to left top, #FFFCA8, #FFBD3E);
-
-  &::after {
-    background: linear-gradient(to right bottom, #FFFCA8, #FFBD3E);
-  }
+.another-gradient-layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 30px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  animation: my-animation 3s linear infinite alternate;
+  background-image: linear-gradient(to right bottom, #caf6e5, #f4fcc1);
 }
 
-.cloudy {
-  background: linear-gradient(to left top, #caf6e5, #f4fcc1);
-
-  &::after {
-    background: linear-gradient(to right bottom, #caf6e5, #f4fcc1);
-  }
+.container.storm .another-gradient-layer {
+  background: linear-gradient(to right bottom, #97a8c4, #513a87);
 }
 
-.broken-clouds {
-  background: linear-gradient(to left top, #bde2e9, #35475c);
-
-  &::after {
-    background: linear-gradient(to right bottom, #bde2e9, #35475c);  
-  }
+.container.sunny .another-gradient-layer {
+  background: linear-gradient(to right bottom, #FFFCA8, #FFBD3E);
 }
 
-.snow {
-  background: linear-gradient(to left top, #c1f5ff, #418be2);
-
-  &::after {
-    background: linear-gradient(to right bottom, #c1f5ff, #418be2);
-  }
+.container.cloudy .another-gradient-layer {
+  background: linear-gradient(to right bottom, #FFFCA8, #FFBD3E);
 }
 
-.rain {
-  background: linear-gradient(to left top, #5c93e8, #193e69);
-
-  &::after {
-    background: linear-gradient(to right bottom, #5c93e8, #193e69);  
-  }
+.container.broken-clouds .another-gradient-layer{
+  background: linear-gradient(to right bottom, #bde2e9, #35475c);
 }
 
-.error {
-  background: linear-gradient(to left top, #ffb4b4, #e35050);
-
-  &::after {
-    background: linear-gradient(to right bottom, #ffb4b4, #e35050);
-  }
+.container.snow .another-gradient-layer {
+  background: linear-gradient(to right bottom, #c1f5ff, #418be2);
 }
 
-.fog {
-  background: linear-gradient(to left top, #8299c4, #92c9aa);
+.container.rain .another-gradient-layer {
+  background: linear-gradient(to right bottom, #5c93e8, #193e69);
+}
 
-  &::after {
-    background: linear-gradient(to right bottom, #8299c4, #92c9aa);
-  }
+.container.error .another-gradient-layer {
+  background: linear-gradient(to right bottom, #ffb4b4, #e35050);
+}
+
+.container.fog .another-gradient-layer {
+  background: linear-gradient(to right bottom, #8299c4, #92c9aa);
 }
 
 @keyframes my-animation {
@@ -334,9 +376,9 @@ button {
 .btn-dark {
   background-color: #0f1024;
 
-  &:hover {
-    background-color: #0f1024df;
-  }
+    // &:hover {
+    //   background-color: #0f1024df;
+    // }
 }
 
 .image-button {
