@@ -316,12 +316,14 @@ body {
 .search-box {
   position: relative;
   display: flex;
-  gap: 15px;
   color: #000000;
+  justify-content: space-between;
+  gap: 5px;
+  align-items: center;
 
   input {
     padding: 10px 20px;
-    width: 90%;
+    width: 98%;
     border: none;
     border-radius: 50px;
     font-size: 16px;
@@ -345,12 +347,38 @@ body {
   } 
 }
 
+.search-input__wrap {
+  width: 100%;
+}
+
 // что это вообще
 .search-bar {
     .search {
       font-size: 28px;
       color: #000000;
     }
+}
+
+.favourite-button {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-image: url('../image/follow-dark-theme.png');
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: 50% 50%;
+  background-color: transparent;
+  right: 60px;
+  top: 6px;
+  opacity: 30%;
+
+  &:hover {
+    background-image: url('../image/red-heart-1.png');
+  }
+}
+
+.favourite-button.active {
+  background-image: url('../image/red-heart-1.png');
 }
 
 button {
@@ -383,7 +411,11 @@ button {
 
 .image-button {
   background-image: url('../image/search-button.png');
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 50px;
+  height: 43px;
+  background-color: #fff;
 }
 
 .weather-box {

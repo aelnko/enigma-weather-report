@@ -175,10 +175,13 @@ const createStartContainerStructure = () => {
   const searchBox = document.createElement('div');
   searchBox.classList.add('search-box');
 
+  const inputWrap = document.createElement('div');
+  inputWrap.classList.add('.search-input__wrap');
   const input = document.createElement('input');
   input.classList.add('search-input');
   input.type = 'text';
   input.placeholder = 'Enter city name';
+  inputWrap.append(input);
 
   const button = document.createElement('button');
   button.classList.add('image-button');
