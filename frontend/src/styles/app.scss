@@ -29,11 +29,24 @@ body {
   height: 50px;
   padding: 13px 13px;
   background-color: #231f01;
+  position: relative;
 
-  img {
-    height: 25px;
-    width: 25px;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    top: 0;
+    left: 0;
+    height: 50px;
+    background-image: url("../image/follow-light-theme.png");
+    background-position: 13px 13px;
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
   }
+}
+
+.follow.btn-light::before {
+  background-image: url('../image/follow-dark-theme.png');
 }
 
 .follow-wrap {
