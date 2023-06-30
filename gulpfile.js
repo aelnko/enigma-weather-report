@@ -63,4 +63,6 @@ const taskWatch = () => {
 // очистка
 const clean = () => deleteAsync('./frontend/dist');
 
+export const build = gulp.series(clean, styles, scripts, html, images);
+
 export default gulp.series(clean, styles, scripts, html, images, taskWatch);
