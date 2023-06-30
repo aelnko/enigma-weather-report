@@ -33,7 +33,7 @@ const createWeatherStructure = () => {
   humidityDiv.classList.add('humidity', 'icon');
 
   const humidityIconImg = document.createElement('img');
-  humidityIconImg.setAttribute('src', '/image/drop.png.png');
+  humidityIconImg.setAttribute('src', './image/drop.png.png');
 
   const humidityValueSpan = document.createElement('span');
   humidityValueSpan.classList.add('value', 'humidity');
