@@ -221,15 +221,12 @@ const createHeaderStructure = () => {
   followSpan.classList.add('follow-message');
   followSpan.innerText = 'favorites';
 
-  followButton1.append(followImage);
   followButton2.append(followSpan);
   follow.append(followButton1, followButton2);
 
   const themeButton = document.createElement('button');
   themeButton.classList.add('theme');
   themeButton.classList.add(colors[currentTheme]);
-
-  themeButton.append(themeImage);
 
   const registrationDiv = document.createElement('div');
   registrationDiv.classList.add('registration');
@@ -246,8 +243,6 @@ const createHeaderStructure = () => {
   registrationSpan.textContent = 'registration';
 
   registrationButton.append(registrationSpan);
-
-  userButton.append(userImage);
 
   registrationDiv.append(userButton, registrationButton);
 
