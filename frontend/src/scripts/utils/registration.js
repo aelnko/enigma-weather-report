@@ -28,6 +28,9 @@ const openRegistrationForm = () => {
   const registerButton = document.querySelector('.registration-button');
   registerButton.remove();
 
+  const registrationIcon = document.querySelector('.user-icon');
+  registrationIcon.setAttribute('id', 'authentication');
+
   const registrationForm = createRegistrationFormStructure();
   wrapper.append(registrationForm);
 

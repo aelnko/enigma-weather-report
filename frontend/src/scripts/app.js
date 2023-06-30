@@ -1,4 +1,4 @@
-import blockRegistrationButtonWhenAuthorized from "./utils/block.js";
+import blockRegistrationButton from "./utils/block.js";
 import { openRegistrationForm } from "./utils/registration.js";
 import { renderWeatherInfo, setContainerOpenId } from "./utils/render.js";
 import switchTheme from "./utils/theme.js";
@@ -18,7 +18,7 @@ const app = () => {
     }
   });
   registrationButton.addEventListener('click', openRegistrationForm);
-  blockRegistrationButtonWhenAuthorized();
+  blockRegistrationButton();
 };
 
 app();
