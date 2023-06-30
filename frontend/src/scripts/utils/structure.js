@@ -38,6 +38,7 @@ const createWeatherStructure = () => {
   humidityValueSpan.classList.add('value', 'humidity');
 
   const humidityP = document.createElement('p');
+  humidityP.classList.add('humidity-text');
   humidityP.innerText = 'humidity';
 
   humidityDiv.append(humidityIconImg);
@@ -56,6 +57,7 @@ const createWeatherStructure = () => {
   windSpeedValueSpan.classList.add('value', 'wind-speed');
 
   const windSpeedP = document.createElement('p');
+  windSpeedP.classList.add('windSpeed-text')
   windSpeedP.innerText = 'wind speed';
 
   windSpeedDiv.append(windSpeedIconImg);
@@ -221,12 +223,7 @@ const createHeaderStructure = () => {
   const followSpan = document.createElement('span');
   followSpan.classList.add('follow-message');
   followSpan.innerText = 'favorites';
-  
-  const followImage = document.createElement('img');
-  followImage.src = `./image/follow-${currentTheme}-theme.png`;
-  followImage.alt = `follow-${currentTheme}-theme`;
 
-  followButton1.append(followImage);
   followButton2.append(followSpan);
   follow.append(followButton1, followButton2);
 

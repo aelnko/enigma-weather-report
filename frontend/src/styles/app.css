@@ -35,6 +35,19 @@ body {
   width: 25px;
 }
 
+.follow::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url("../image/follow-light-theme.png");
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  top: 0;
+  left: 0;
+}
+
 .follow-wrap {
   width: 150px;
   border-top-left-radius: 50px;
@@ -71,6 +84,47 @@ body {
   transition: 0.3s;
   border-radius: 100px;
   top: 0;
+}
+
+.follow.exit::before {
+  content: "";
+  background-image: none;
+  width: 1.5px;
+  height: 30px;
+  left: 24px;
+  top: 9px;
+  background-color: #fff;
+  transform: rotate(45deg);
+  border-radius: 3px;
+}
+
+.follow.exit::after {
+  content: "";
+  width: 1.5px;
+  height: 30px;
+  left: 24px;
+  top: 9px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+  position: absolute;
+  border-radius: 3px;
+}
+
+.follow.exit + .follow-button {
+  width: 175px;
+  border-radius: 100px;
+}
+
+.btn-light.follow.exit::before {
+  background-color: #000;
+}
+
+.btn-light.follow.exit::after {
+  background-color: #000;
+}
+
+.btn-light.follow::before {
+  background-image: url("../image/follow-dark-theme.png");
 }
 
 .theme {
@@ -338,6 +392,7 @@ body {
   border-radius: 50px;
   font-size: 16px;
   color: #000000;
+  text-transform: uppercase;
 }
 .search-box input::-moz-placeholder {
   text-transform: lowercase;
@@ -381,7 +436,7 @@ body {
   background-color: transparent;
   right: 60px;
   top: 6px;
-  opacity: 30%;
+  opacity: 100%;
 }
 .favourite-button:hover {
   background-image: url("../image/red-heart-1.png");
@@ -459,7 +514,7 @@ button:disabled {
 
 .weather-details {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   margin-top: 40px;
@@ -472,6 +527,7 @@ button:disabled {
   gap: 10px;
   font-size: 12px;
   font-weight: 400;
+  position: relative;
 }
 .weather-details .item .icon {
   width: auto;
@@ -479,6 +535,18 @@ button:disabled {
 .weather-details .item .value {
   font-size: 20px;
   font-weight: 500;
+}
+
+.humidity-text {
+  top: 25px;
+  left: 50px;
+  position: absolute;
+}
+
+.windSpeed-text {
+  top: 25px;
+  left: 50px;
+  position: absolute;
 }
 
 .error-box {
