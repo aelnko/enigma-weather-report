@@ -29,10 +29,23 @@ body {
   height: 50px;
   padding: 13px 13px;
   background-color: #231f01;
+  position: relative;
 }
-.follow img {
-  height: 25px;
-  width: 25px;
+.follow::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  top: 0;
+  left: 0;
+  height: 50px;
+  background-image: url("../image/follow-light-theme.png");
+  background-position: 13px 13px;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+}
+
+.follow.btn-light::before {
+  background-image: url("../image/follow-dark-theme.png");
 }
 
 .follow-wrap {
@@ -78,10 +91,23 @@ body {
   width: 50px;
   height: 50px;
   padding: 13px 13px;
+  position: relative;
 }
-.theme img {
-  height: 25px;
-  width: 25px;
+.theme::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  top: 0;
+  left: 0;
+  height: 50px;
+  background-image: url("../image/button-light-theme.png");
+  background-position: 13px 13px;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+}
+
+.theme.btn-light::before {
+  background-image: url("../image/button-dark-theme.png");
 }
 
 .registration {
@@ -112,13 +138,21 @@ body {
   height: 50px;
   background-color: #231f01;
   padding: 13px 13px;
-  position: absolute;
   right: 0;
   z-index: 1;
+  position: absolute;
 }
-.user-icon img {
-  height: 20px;
-  width: 20px;
+.user-icon::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  top: 0;
+  left: 0;
+  height: 50px;
+  background-image: url("../image/user-light-theme.png");
+  background-position: 13px 13px;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
 }
 
 .user-icon:hover + .registration-button {
@@ -137,9 +171,9 @@ body {
   background-color: #231f01;
   padding: 13px 13px;
 }
-.user-icon-js img {
-  height: 20px;
-  width: 20px;
+
+.user-icon.btn-light::before {
+  background-image: url("../image/user-dark-theme.png");
 }
 
 .registration-message {
@@ -319,6 +353,7 @@ body {
   border-radius: 50px;
   font-size: 16px;
   color: #000000;
+  text-transform: uppercase;
 }
 .search-box input::-moz-placeholder {
   text-transform: lowercase;
@@ -368,6 +403,9 @@ button:disabled {
 .btn-dark {
   background-color: #0f1024;
 }
+.btn-dark:hover {
+  background-color: rgba(15, 16, 36, 0.8745098039);
+}
 
 .image-button {
   background-image: url("../image/search-button.png");
@@ -411,7 +449,7 @@ button:disabled {
 
 .weather-details {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   margin-top: 40px;
@@ -424,6 +462,7 @@ button:disabled {
   gap: 10px;
   font-size: 12px;
   font-weight: 400;
+  position: relative;
 }
 .weather-details .item .icon {
   width: auto;
@@ -431,6 +470,18 @@ button:disabled {
 .weather-details .item .value {
   font-size: 20px;
   font-weight: 500;
+}
+
+.humidity-text {
+  top: 25px;
+  left: 50px;
+  position: absolute;
+}
+
+.windSpeed-text {
+  top: 25px;
+  left: 50px;
+  position: absolute;
 }
 
 .error-box {

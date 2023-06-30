@@ -220,10 +220,6 @@ const createHeaderStructure = () => {
   const followSpan = document.createElement('span');
   followSpan.classList.add('follow-message');
   followSpan.innerText = 'favorites';
-  
-  const followImage = document.createElement('img');
-  followImage.src = `./image/follow-${currentTheme}-theme.png`;
-  followImage.alt = `follow-${currentTheme}-theme`;
 
   followButton1.append(followImage);
   followButton2.append(followSpan);
@@ -233,10 +229,6 @@ const createHeaderStructure = () => {
   themeButton.classList.add('theme');
   themeButton.classList.add(colors[currentTheme]);
 
-  const themeImage = document.createElement('img');
-  themeImage.src = `./image/button-${currentTheme}-theme.png`;
-  themeImage.alt = 'sunny-theme';
-
   themeButton.append(themeImage);
 
   const registrationDiv = document.createElement('div');
@@ -245,10 +237,6 @@ const createHeaderStructure = () => {
   const userButton = document.createElement('button');
   userButton.classList.add('user-icon');
   userButton.classList.add(colors[currentTheme]);
-
-  const userImage = document.createElement('img');
-  userImage.src = `./image/user-${currentTheme}-theme.png`;
-  userImage.alt = `user-${currentTheme}-theme`;
 
   const registrationButton = document.createElement('button');
   registrationButton.classList.add('registration-button');

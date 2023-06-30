@@ -16,7 +16,6 @@ const closeRegistrationForm = () => {
   const newContainer = createStartContainerStructure();
   const newHeader = createHeaderStructure();
   const body = document.body;
-
   body.append(newHeader, newContainer);
 
   app();
