@@ -326,6 +326,7 @@ body {
     border-radius: 50px;
     font-size: 16px;
     color: #000000;
+    text-transform: uppercase;
 
     &::placeholder {
       text-transform: lowercase;
@@ -376,9 +377,9 @@ button {
 .btn-dark {
   background-color: #0f1024;
 
-    // &:hover {
-    //   background-color: #0f1024df;
-    // }
+    &:hover {
+      background-color: #0f1024df;
+    }
 }
 
 .image-button {
@@ -425,7 +426,7 @@ button {
 
 .weather-details {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   margin-top: 40px;
@@ -438,6 +439,7 @@ button {
     gap: 10px;
     font-size: 12px;
     font-weight: 400;
+    position: relative;
 
     .icon {
       width: auto;
@@ -448,6 +450,18 @@ button {
       font-weight: 500;
     }
   }
+}
+
+.humidity-text {
+  top: 25px;
+  left: 50px;
+  position: absolute;
+}
+
+.windSpeed-text {
+  top: 25px;
+  left: 50px;
+  position: absolute;
 }
 
 .error-box {
