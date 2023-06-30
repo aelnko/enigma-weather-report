@@ -388,6 +388,7 @@ body {
   border-radius: 50px;
   font-size: 16px;
   color: #000000;
+  text-transform: uppercase;
 }
 .search-box input::-moz-placeholder {
   text-transform: lowercase;
@@ -509,7 +510,7 @@ button:disabled {
 
 .weather-details {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   margin-top: 40px;
@@ -522,6 +523,7 @@ button:disabled {
   gap: 10px;
   font-size: 12px;
   font-weight: 400;
+  position: relative;
 }
 .weather-details .item .icon {
   width: auto;
@@ -529,6 +531,18 @@ button:disabled {
 .weather-details .item .value {
   font-size: 20px;
   font-weight: 500;
+}
+
+.humidity-text {
+  top: 25px;
+  left: 50px;
+  position: absolute;
+}
+
+.windSpeed-text {
+  top: 25px;
+  left: 50px;
+  position: absolute;
 }
 
 .error-box {

@@ -38,6 +38,7 @@ const createWeatherStructure = () => {
   humidityValueSpan.classList.add('value', 'humidity');
 
   const humidityP = document.createElement('p');
+  humidityP.classList.add('humidity-text');
   humidityP.innerText = 'humidity';
 
   humidityDiv.append(humidityIconImg);
@@ -56,6 +57,7 @@ const createWeatherStructure = () => {
   windSpeedValueSpan.classList.add('value', 'wind-speed');
 
   const windSpeedP = document.createElement('p');
+  windSpeedP.classList.add('windSpeed-text')
   windSpeedP.innerText = 'wind speed';
 
   windSpeedDiv.append(windSpeedIconImg);
