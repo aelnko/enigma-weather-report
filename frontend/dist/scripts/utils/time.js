@@ -1,0 +1,1 @@
+const checkForDayTime=()=>{const t=Number((new Date).getHours().toString().padStart(2,"0"));return t>=6&&t<23?"day":"night"};export default checkForDayTime;
