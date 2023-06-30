@@ -213,6 +213,7 @@ const createHeaderStructure = () => {
 
   const followButton1 = document.createElement('button');
   followButton1.classList.add('follow', colors[currentTheme]);
+  followButton1.setAttribute('id', 'switch-theme');
 
   const followButton2 = document.createElement('button');
   followButton2.classList.add('follow-button');
@@ -225,15 +226,15 @@ const createHeaderStructure = () => {
   follow.append(followButton1, followButton2);
 
   const themeButton = document.createElement('button');
-  themeButton.classList.add('theme');
-  themeButton.classList.add(colors[currentTheme]);
+  themeButton.classList.add('theme', colors[currentTheme]);
+  themeButton.setAttribute('id', 'switch-theme');
 
   const registrationDiv = document.createElement('div');
   registrationDiv.classList.add('registration');
 
   const userButton = document.createElement('button');
-  userButton.classList.add('user-icon');
-  userButton.classList.add(colors[currentTheme]);
+  userButton.classList.add('user-icon', colors[currentTheme]);
+  userButton.setAttribute('id', 'switch-theme');
 
   const registrationButton = document.createElement('button');
   registrationButton.classList.add('registration-button');
