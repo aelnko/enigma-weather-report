@@ -15,9 +15,9 @@ const closeRegistrationForm = () => {
 
   const newContainer = createStartContainerStructure();
   const newHeader = createHeaderStructure();
-  const script = document.querySelector('#script');
-  script.insertAdjacentElement('beforebegin', newHeader);
-  script.insertAdjacentElement('beforebegin', newContainer);
+  const body = document.body;
+
+  body.append(newHeader, newContainer);
 
   app();
 };
