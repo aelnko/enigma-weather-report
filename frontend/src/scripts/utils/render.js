@@ -29,19 +29,22 @@ const renderError = () => {
   switchColor(null);
 };
 
-const renderWeatherInfo = async (followCity) => {  
+const renderWeatherInfo = async (followCity, multiply, i) => {  
   let cityName;
   const name = document.querySelector('.search-input');
+
   if (name) {
     cityName = name.value;
   } else {
     cityName = followCity;
   }
+
   const container = document.querySelector('.container');
+
   if (cityName !== '') {
     container.style.height = '650px';
   }
-  const wrapper = document.querySelector('.container__wrapper');
+
   const weatherData = await getWeatherData(cityName);
   
   if (weatherData.message === 'city not found') {
@@ -61,7 +64,18 @@ const renderWeatherInfo = async (followCity) => {
   const {temp, humidity} = weatherData.main;
   const windSpeed = weatherData.wind.speed;
 
-  wrapper.append(createWeatherStructure());
+  let wrapper;
+
+  if (multiply === 'multiply') {
+    wrapper = document.querySelector(`#wrapper${i}`);
+    const weatherBox = createWeatherStructure();
+    console.log(`wrapper${i}`);
+    wrapper.append(weatherBox);
+  } else {
+    wrapper = document.querySelector('#wrapper0');
+    const weatherBox = createWeatherStructure();
+    wrapper.append(weatherBox);
+  }
 
   document.querySelector('.current-temp div').innerText = `${Math.round(temp)}°C`;
   document.querySelector('.city').innerText = `${city}, ${country}`;

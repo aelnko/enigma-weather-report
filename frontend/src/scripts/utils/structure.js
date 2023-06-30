@@ -171,6 +171,7 @@ const createStartContainerStructure = () => {
 
   const wrapper = document.createElement('div');
   wrapper.classList.add('container__wrapper');
+  wrapper.setAttribute('id', 'wrapper0');
 
   const searchBox = document.createElement('div');
   searchBox.classList.add('search-box');
@@ -268,9 +269,17 @@ const createHeaderStructure = () => {
   return header;
 };
 
-const createContainerStructureWithoutSearchBox = () => {
+const createSliderButton = (direction) => {
+  const button = document.createElement('button');
+  button.classList.add(`${direction}-button`);
+
+  return button;
+};
+
+const createStructureForFollow = (id) => {
   const container = document.createElement('div');
   container.classList.add('container');
+  container.style.height = '650px';
 
   const gradientLayer = document.createElement('div');
   gradientLayer.classList.add('gradient-layer');
@@ -280,6 +289,7 @@ const createContainerStructureWithoutSearchBox = () => {
 
   const wrapper = document.createElement('div');
   wrapper.classList.add('container__wrapper');
+  wrapper.setAttribute('id', id);
 
   container.append(gradientLayer, anotherGradientLayer, wrapper);
   
@@ -292,5 +302,6 @@ export {
   createRegistrationFormStructure,
   createStartContainerStructure,
   createHeaderStructure,
-  createContainerStructureWithoutSearchBox
+  createStructureForFollow,
+  createSliderButton
 };
