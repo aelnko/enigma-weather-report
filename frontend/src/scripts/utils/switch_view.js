@@ -28,9 +28,7 @@ const switchGradient = (newClass) => {
   gradientLayer.style.opacity = 0;
   gradientLayer.style.background = gradients[newClass];
   
-  let start = Date.now();
   let timer = setInterval(() => {
-    const timePassed = Date.now() - start;
     let opacity = parseFloat(gradientLayer.style.opacity);
     opacity += 0.01;
     gradientLayer.style.opacity = opacity.toString();
@@ -71,21 +69,21 @@ const switchWeatherIcon = (id) => {
   const dayTime = checkForDayTime();
 
   if (id === null) {
-    weatherIcon.src = '../../image/warning.png';
+    weatherIcon.src = './image/warning.png';
   } else if (id >= 200 && id <= 232) {
-    weatherIcon.src = '../../image/storm.png';
+    weatherIcon.src = './image/storm.png';
   } else if (id === 800) {
-    weatherIcon.src = `../../image/${dayTime}-sunny.png`;
+    weatherIcon.src = `./image/${dayTime}-sunny.png`;
   } else if (id === 801 || id === 802) {
-    weatherIcon.src = `../../image/${dayTime}-cloudy.png`;
+    weatherIcon.src = `./image/${dayTime}-cloudy.png`;
   } else if (id === 803 || id === 804) {
-    weatherIcon.src = '../../image/overcast.png';
+    weatherIcon.src = './image/overcast.png';
   } else if (id >= 600 && id <= 622) {
-    weatherIcon.src = '../../image/snow.png';
+    weatherIcon.src = './image/snow.png';
   } else if (id >= 500 && id <= 531) {
-    weatherIcon.src = '../../image/rain.png';
+    weatherIcon.src = './image/rain.png';
   } else if (id >= 701 && id <= 781) {
-    weatherIcon.src = '../../image/fog.png';
+    weatherIcon.src = './image/fog.png';
   }
 };
 

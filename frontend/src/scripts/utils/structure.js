@@ -6,7 +6,7 @@ const createWeatherStructure = () => {
   weatherIconDiv.classList.add('weather-icon');
 
   const weatherIconImg = document.createElement('img');
-  weatherIconImg.setAttribute('src', '../../image/cloudy.png');
+  weatherIconImg.setAttribute('src', './image/cloudy.png');
 
   weatherIconDiv.append(weatherIconImg);
 
@@ -33,7 +33,7 @@ const createWeatherStructure = () => {
   humidityDiv.classList.add('humidity', 'icon');
 
   const humidityIconImg = document.createElement('img');
-  humidityIconImg.setAttribute('src', '../../image/drop.png.png');
+  humidityIconImg.setAttribute('src', './image/drop.png.png');
 
   const humidityValueSpan = document.createElement('span');
   humidityValueSpan.classList.add('value', 'humidity');
@@ -52,7 +52,7 @@ const createWeatherStructure = () => {
   windSpeedDiv.classList.add('wind-speed', 'icon');
 
   const windSpeedIconImg = document.createElement('img');
-  windSpeedIconImg.setAttribute('src', '../../image/wind.png.png');
+  windSpeedIconImg.setAttribute('src', './image/wind.png.png');
 
   const windSpeedValueSpan = document.createElement('span');
   windSpeedValueSpan.classList.add('value', 'wind-speed');
@@ -78,7 +78,7 @@ const createErrorStructure = () => {
   weatherIconDiv.classList.add('weather-icon');
 
   const weatherIconImg = document.createElement('img');
-  weatherIconImg.setAttribute('src', '../../image/warning.png');
+  weatherIconImg.setAttribute('src', './image/warning.png');
 
   weatherIconDiv.append(weatherIconImg);
 
